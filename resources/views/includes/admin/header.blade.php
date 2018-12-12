@@ -52,9 +52,9 @@
                     <span class="d-none d-md-inline-block">{{ Auth::user()->username }}</span>
                   </a>
                   <div class="dropdown-menu dropdown-menu-small">
-                    <a class="dropdown-item" href="user-profile-lite.html">
+                   <!-- <a class="dropdown-item" href="user-profile-lite.html">
                       <i class="material-icons">&#xE7FD;</i> Profile
-                    </a>
+                    </a>-->
                     
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="{{ route('logout')}}">
