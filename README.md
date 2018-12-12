@@ -13,6 +13,8 @@ Run the following GIT command to clone the project repository:
 $ cd /path/to/apache/www/directory
 
 $ git clone https://github.com/reggiestain/hybrid-assessment.git
+```
+
 
 
 ## Run Migration
@@ -21,7 +23,7 @@ By default Migrations is installed with the default application skeleton.
 A CakePHP application contains src/Command, src/Shell and src/Shell/Task directories that contain its shells and tasks. It also comes with an executable in the bin directory:
 
 Run database migrations and seeder below:
-``` bash
+
 $ cd /path/to/app
 
 $ bin/cake migrations migrate
