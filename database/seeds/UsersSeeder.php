@@ -22,7 +22,7 @@ class UsersSeeder extends Seeder
                     'surname' => 'Bossman',
                     'email' => 'reggiestain@gmail.com',
                     'user_group_id' =>1,
-                    'password' => 'admin0123',
+                    'password' => bcrypt('admin0123'),
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s')
                 ],
