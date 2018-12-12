@@ -17,7 +17,7 @@ $ git clone https://github.com/reggiestain/hybrid-assessment.git
 ```
 ## Database Configuration
 
-Read and edit config/app.php and setup the 'Datasources' and any other configuration relevant for your application.
+Read and edit the .env file located in the project directory setup the 'Datasources' and any other configuration relevant for your application.
 
 
 ## Run Database Migration
@@ -42,6 +42,14 @@ $ php artisan db:seed --class=ProductsSeeder
 
 ```
 
+You are now set to go.
+
+Run the application on your web server and register as a normal user to login with email and password
+
+Login as an administration with the details below:
+
+Email: reggiestain@gmail.com
+Password: adminadmin0123
 
 
 
