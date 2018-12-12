@@ -46,8 +46,11 @@ class ProductController extends Controller {
         $status = false;
         $product = Product::with('product_category')->where('id', $id)->first();
         $balance = AccountBalance::where('user_id', Auth::user()->id)->first();
+        
+        if(empty($balance)){
+           $status = false;
+        }else{            
         $remainder = abs($balance->balance) - abs($product->price);
-
         if ($remainder < 0) {
             $status = false;
         } else {
@@ -55,12 +58,12 @@ class ProductController extends Controller {
                 'user_id' => Auth::user()->id,
                 'product_id' => $id
             ]);
-
             $status = true;
-        }
-        return response()->json($status);
+        }       
+       }
+       
+      return response()->json($status);
     }
-
     /**
      * Product Discount view
      * @return json
