@@ -13,35 +13,35 @@ Run the following GIT command to clone the project repository:
 $ cd /path/to/apache/www/directory
 
 $ git clone https://github.com/reggiestain/hybrid-assessment.git
+
+```
+## Database Configuration
+
+Read and edit config/app.php and setup the 'Datasources' and any other configuration relevant for your application.
+
+
+## Run Database Migration
+
+``` bash
+
+$ cd /path/to/project/directory
+
+$ php artisan migrate
+
 ```
 
+## Run Database Seeder
 
+``` bash
 
-## Run Migration
-By default Migrations is installed with the default application skeleton.
+$ cd /path/to/project/directory
 
-A CakePHP application contains src/Command, src/Shell and src/Shell/Task directories that contain its shells and tasks. It also comes with an executable in the bin directory:
+$ php artisan db:seed --class=UsersSeeder
+$ php artisan db:seed --class=ProductCategorySeeder
+$ php artisan db:seed --class=ProductsSeeder
 
-Run database migrations and seeder below:
-
-$ cd /path/to/app
-
-$ bin/cake migrations migrate
-
-$ bin/cake migrations seed
 ```
 
-Alternately the application database file is located in "config/schema/siyakha_test_db.sql" directory of the project folder.
-Run this sql script on your mysql server to create the "siyakha_test_db" database.
-
-## Configuration
-
-Read and edit `config/app.php` and setup the 'Datasources' and any other
-configuration relevant for your application.
-
-You are now set to go.
-
-Run the  application on your web server and register to login with email and password
 
 
 

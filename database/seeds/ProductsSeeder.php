@@ -22,7 +22,7 @@ class ProductsSeeder extends Seeder {
                     'product_category_id' => 1,
                     'price' => 0,
                     'discount' => 0,
-                    'mime_type'=>'images/products/women/category-1.jpg',
+                    'mime_type'=>'images/products/women/catalog-1.jpg',
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s')
                 ],
@@ -32,7 +32,7 @@ class ProductsSeeder extends Seeder {
                     'product_category_id' => 1,
                     'price' => 0,
                     'discount' => 0,
-                    'mime_type'=>'images/products/women/category-2.jpg',
+                    'mime_type'=>'images/products/women/catalog-2.jpg',
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s'),
                 ],
@@ -42,7 +42,7 @@ class ProductsSeeder extends Seeder {
                     'product_category_id' => 1,
                     'price' => 0,
                     'discount' => 0,
-                    'mime_type'=>'images/products/women/category-3.jpg',
+                    'mime_type'=>'images/products/women/catalog-3.jpg',
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s')
                 ],
@@ -52,7 +52,7 @@ class ProductsSeeder extends Seeder {
                     'product_category_id' => 2,
                     'price' => 0,
                     'discount' => 0,
-                    'mime_type'=>'images/products/men/category-1.jpg',
+                    'mime_type'=>'images/products/men/catalog-1.jpg',
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s')
                 ],
@@ -62,7 +62,7 @@ class ProductsSeeder extends Seeder {
                     'product_category_id' => 2,
                     'price' => 0,
                     'discount' => 0,
-                    'mime_type'=>'images/products/men/category-2.jpg',
+                    'mime_type'=>'images/products/men/catalog-2.jpg',
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s')
                 ],
@@ -72,7 +72,7 @@ class ProductsSeeder extends Seeder {
                     'product_category_id' => 2,
                     'price' => 0,
                     'discount' => 0,
-                    'mime_type'=>'images/products/men/category-3.jpg',
+                    'mime_type'=>'images/products/men/catalog-3.jpg',
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s')
                 ],
@@ -82,7 +82,7 @@ class ProductsSeeder extends Seeder {
                     'product_category_id' => 3,
                     'price' => 0,
                     'discount' => 0,
-                    'mime_type'=>'images/products/kids/category-1.jpg',
+                    'mime_type'=>'images/products/kids/catalog-1.jpg',
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s')
                 ],                
@@ -92,7 +92,7 @@ class ProductsSeeder extends Seeder {
                     'product_category_id' => 3,
                     'price' => 0,
                     'discount' => 0,
-                    'mime_type'=>'images/products/kids/category-2.jpg',
+                    'mime_type'=>'images/products/kids/catalog-2.jpg',
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s')
                 ],
@@ -102,7 +102,7 @@ class ProductsSeeder extends Seeder {
                     'product_category_id' => 3,
                     'price' => 0,
                     'discount' => 0,
-                    'mime_type'=>'images/products/kids/category-3.jpg',
+                    'mime_type'=>'images/products/kids/catalog-3.jpg',
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => date('Y-m-d H:i:s')
                 ],
