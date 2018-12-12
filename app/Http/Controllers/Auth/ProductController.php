@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\AccountBalance;
+use App\Models\Transaction;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -46,24 +47,37 @@ class ProductController extends Controller {
         $status = false;
         $product = Product::with('product_category')->where('id', $id)->first();
         $balance = AccountBalance::where('user_id', Auth::user()->id)->first();
-        
-        if(empty($balance)){
-           $status = false;
-        }else{            
-        $remainder = abs($balance->balance) - abs($product->price);
-        if ($remainder < 0) {
+
+        if (empty($balance)) {
             $status = false;
         } else {
-            Transaction::create([
-                'user_id' => Auth::user()->id,
-                'product_id' => $id
-            ]);
-            $status = true;
-        }       
-       }
-       
-      return response()->json($status);
+            $price = abs($product->price);
+            $discount = abs($product->discount);
+            $newPrice = $this->discount($price, $discount);
+            $remainder = $balance->balance - $newPrice;
+            if ($remainder < 0) {
+                $status = false;
+            } else {
+                Transaction::create([
+                    'user_id' => Auth::user()->id,
+                    'product_id' => $id
+                ]);
+
+                $this->balanceUpate($remainder);
+
+                $status = true;
+            }
+        }
+
+        return response()->json($status);
     }
+
+    Protected function balanceUpate($remainder) {
+        $AccountBalance = AccountBalance::where('user_id', Auth::user()->id)->first();
+        $AccountBalance->balance = $remainder;
+        $AccountBalance->save();
+    }
+
     /**
      * Product Discount view
      * @return json
@@ -101,7 +115,7 @@ class ProductController extends Controller {
             return Redirect('/dashboard')->with('success', 'You have successfully updated');
         }
     }
-    
+
     /**
      * Discount price
      * 
@@ -109,13 +123,13 @@ class ProductController extends Controller {
      * @param type $discount
      * @return int
      */
-    public static function discount($price,$discount) {
-        
+    public static function discount($price, $discount) {
+
         $price = abs($price);
         $discount = abs($discount);
         $sellingPrice = $price - ($price * ($discount / 100));
-        
-        return number_format($sellingPrice,2);
+
+        return number_format($sellingPrice, 2);
     }
 
 }
