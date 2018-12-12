@@ -124,12 +124,30 @@ class ProductController extends Controller {
      * @return int
      */
     public static function discount($price, $discount) {
+        $instance = new self();
+        
+        $price = intval($price);
+        $discount = intval($discount);
 
-        $price = abs($price);
-        $discount = abs($discount);
-        $sellingPrice = $price - ($price * ($discount / 100));
+        if ($instance->in_range($price, 50, 100)) {
+            $sellingPrice = $price - ($price * (0 / 100));
+        } elseif ($instance->in_range($price, 112, 115)) {
+            $sellingPrice = $price - ($price * (0.25 / 100));
+        } elseif ($price > 120) {
+            $sellingPrice = $price - ($price * (0.50 / 100));
+        } else {
+            $sellingPrice = $price - ($price * (0 / 100));
+        }
 
         return number_format($sellingPrice, 2);
+    }
+
+    private function in_range($number, $min, $max, $inclusive = FALSE) {
+        if (is_int($number) && is_int($min) && is_int($max)) {
+            return $inclusive ? ($number >= $min && $number <= $max) : ($number > $min && $number < $max);
+        }
+
+        return FALSE;
     }
 
 }
