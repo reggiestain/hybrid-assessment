@@ -1,8 +1,6 @@
-# Siyakha Practical Test
+# PHP DEVELOPER PRACTICAL ASSESSMENT
 
-This application was developed with [CakePHP](http://cakephp.org) 3.x.
-
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
+This application was developed with [laravel] 5.5*
 
 ## Installation
 
@@ -12,13 +10,10 @@ Run the following GIT command to clone the project repository:
 
 ``` bash
 
-$ cd /path/to/app
+$ cd /path/to/apache/www/directory
 
-$ git clone https://github.com/reggiestain/siyahka-test.git
+$ git clone https://github.com/reggiestain/hybrid-assessment.git
 
-```
-
-Alternately download zip project folder and extract into the "www" directory on your apache server.
 
 ## Run Migration
 By default Migrations is installed with the default application skeleton.
