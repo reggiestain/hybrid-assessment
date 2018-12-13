@@ -54,9 +54,9 @@
                         
                         <div class="product_info">
                             <h6 class="product_name"><a href="single.html">{{ $product->name }}</a></h6>
-                            <div class="product_price">@if($product->price > 0)R {{$newPrice = App\Http\Controllers\Auth\ProductController::Discount($product->price,$product->discount)}} 
+                            <div class="product_price">@if($product->price > 0)R {{ App\Http\Controllers\Auth\ProductController::Discount($product->price,$product->discount)}} 
                                                        @else  @endif
-                                @if($product->price > $newPrice) <span>R {{ $product->price }} </span> @else  @endif</div>
+                                @if($product->price > App\Http\Controllers\Auth\ProductController::Discount($product->price,$product->discount)) <span>R {{ $product->price }} </span> @else  @endif</div>
                         </div>
                     </div>
                     <div class="red_button add_to_cart_button"><a href="{{route('login')}}">add to cart</a></div>
