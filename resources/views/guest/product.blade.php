@@ -39,6 +39,6 @@ font-size: 12px;
     </div>
     <div class="pricetext">@if($product->price > 0)R {{App\Http\Controllers\Auth\ProductController::Discount($product->price,$product->discount)}} 
                                                        @else  @endif
-                                @if($product->discount > 0) <span>R {{ $product->price }} </span> @else  @endif</div>            
+                                @if($product->price > App\Http\Controllers\Auth\ProductController::Discount($product->price,$product->discount)) <span>R {{ $product->price }} </span> @else  @endif</div>            
     </div>
 </div>
