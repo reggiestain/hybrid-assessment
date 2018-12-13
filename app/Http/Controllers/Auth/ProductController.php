@@ -60,9 +60,10 @@ class ProductController extends Controller {
             } else {
                 Transaction::create([
                     'user_id' => Auth::user()->id,
-                    'product_id' => $id
+                    'product_id' => $id,
+                    'price' => $newPrice
                 ]);
-
+                
                 $this->balanceUpate($remainder);
 
                 $status = true;

@@ -33,7 +33,7 @@
                           <td>{{$tran->id}}</td>
                           <td>{{$tran->product->description}}</td>
                           <td>{{$tran->product->product_category->name}}</td>
-                          <td>{{$tran->product->price}}</td>
+                          <td>{{$tran->price}}</td>
                           <td>{{$tran->created_at}}</td>
                         </tr>
                         @endforeach

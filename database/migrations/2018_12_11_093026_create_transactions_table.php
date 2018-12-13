@@ -17,6 +17,7 @@ class CreateTransactionsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->nullable(false)->unsigned();
             $table->integer('product_id')->nullable(false)->unsigned();
+            $table->unsignedDecimal('price', 8, 2);
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
