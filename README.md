@@ -42,6 +42,16 @@ $ php artisan db:seed --class=ProductsSeeder
 
 ```
 
+## Run Server
+
+``` bash
+
+$ cd /path/to/project/directory
+
+$ php artisan serve
+
+```
+
 You are now set to go.
 
 Run the application on your web server and register as a normal user to login with email and password
