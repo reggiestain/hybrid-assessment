@@ -13,6 +13,7 @@ class PagesController extends Controller {
      * @return mixed
      */
     public function home() {
+       
         $products  = Product::all();
         $categories =  ProductCategory::all();
         return view('pages.home', ['products'=>$products,'categories'=>$categories]);
