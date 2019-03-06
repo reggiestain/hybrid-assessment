@@ -20,7 +20,7 @@ class ProductController extends Controller {
 
         $products = Product::with('product_category')->get();
 
-        return view('Auth.products', ['products' => $products]);
+        return view('auth.products', ['products' => $products]);
     }
 
     /**

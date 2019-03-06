@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use App\Models\UserGroups;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Controller;
@@ -47,10 +48,10 @@ use RegistersUsers;
      */
     protected function validator(array $data) {
         return Validator::make($data, [
-                'username' => 'required|string|min:20|unique:users',
-                'firstname' => 'required|max:50',
-                'surname' => 'required|max:50',
-                'email' => 'required|string|email|max:255|unique:users',
+                'username' => 'required|string|unique:users',
+                'firstname' => 'required',
+                'surname' => 'required',
+                'email' => 'required|string|unique:users',
                 'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
                 'password_confirmation' => 'min:6'
         ]);
@@ -63,13 +64,17 @@ use RegistersUsers;
      * @return \App\User
      */
     protected function create(array $data) {
+        
         $user = User::create([
                 'username' => $data['username'],
                 'firstname' => $data['firstname'],
                 'surname' => $data['surname'],
                 'email' => $data['email'],
                 'password' => bcrypt($data['password']),
+                'user_group_id'=>2
         ]);
+        
+        
 
         return $user;
     }
