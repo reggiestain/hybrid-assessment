@@ -40,14 +40,14 @@
                     <div class="logo_container">
                         <!--<a href="#">David<span> Madanga</span></a>-->
                         <a class="navbar-brand" href="#">
-                            <img src="{{ 'public/images/logo_black.png' }}" class="img-responsive" alt="" style="width:160px;height:60px">
+                            <img src="{{ 'public/images/logo_black.png' }}" class="img-responsive" alt="" style="width:150px;height:60px">
                         </a>
                     </div>
                     <nav class="navbar">
                         <ul class="navbar_menu">
                             <li><a href="{{ route('home') }}" style="margin-right: 400px">home</a></li>
                             <li><a href="{{ route('login') }}" >Sign In</a> </li>
-                            <li><a href="{{ route('register') }}" >Register</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
                         </ul>
                         <!--<ul class="navbar_user">
                             <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
