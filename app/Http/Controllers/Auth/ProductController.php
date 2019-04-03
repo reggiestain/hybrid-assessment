@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\ProductCategory;
 use App\Models\AccountBalance;
 use App\Models\Transaction;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,7 @@ class ProductController extends Controller {
     public function index() {
 
         $products = Product::with('product_category')->get();
-
+        
         return view('auth.products', ['products' => $products]);
     }
 
@@ -32,6 +33,7 @@ class ProductController extends Controller {
     public function view($id) {
 
         $product = Product::with('product_category')->where('id', $id)->first();
+        
         $view = view("guest.product", compact('product'))->render();
 
         return response()->json(['html' => $view]);
@@ -44,6 +46,7 @@ class ProductController extends Controller {
      * @return json
      */
     public function buy($id) {
+        
         $status = false;
         $product = Product::with('product_category')->where('id', $id)->first();
         $balance = AccountBalance::where('user_id', Auth::user()->id)->first();
@@ -85,7 +88,10 @@ class ProductController extends Controller {
      */
     public function edit($id) {
         $product = Product::where('id', $id)->first();
-        $view = view("admin.discount", compact('product'))->render();
+        
+        $Cat = ProductCategory::pluck('name', 'id');
+        
+        $view = view("admin.discount", compact('product','Cat'))->render();
 
         return response()->json(['html' => $view]);
     }
@@ -98,7 +104,7 @@ class ProductController extends Controller {
      */
     public function update(Request $request) {
 
-        $validation = Validator::make($request->all(), array(
+        $validation = Validator::make($request->all(), array(               
                 'price' => 'required|numeric',
                 'discount' => 'required|numeric',
                 )
@@ -109,8 +115,11 @@ class ProductController extends Controller {
             return Redirect('/dashboard')->withInput()->withErrors($validation->messages());
         } else {
             Product::where('id', $request->input('id'))->update(array(
+                'name' => $request->input('name'),
+                'description' => $request->input('description'),
                 'price' => $request->input('price'),
-                'discount' => $request->input('discount')
+                'discount' => $request->input('discount'),
+                'product_category_id' => $request->input('product_category_id'),
             ));
 
             return Redirect('/dashboard')->with('success', 'You have successfully updated');

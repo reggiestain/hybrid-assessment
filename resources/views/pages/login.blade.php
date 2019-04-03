@@ -11,11 +11,11 @@
         <legend class="scheduler-border">Sign In</legend>
         <form  method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
-            <div class="form-group">
+            <div class="form-group col-md-12 col-sm-6 col-xs-12">
                 <label for="email">Email address:</label>
                 <input type="email" class="form-control" name="email">
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-12 col-sm-6 col-xs-12">
                 <label for="pwd">Password:</label>
                 <input type="password" class="form-control" name="password">
             </div>

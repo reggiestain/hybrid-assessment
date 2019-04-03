@@ -12,7 +12,7 @@
     <form method="POST" action="{{ route('register') }}">
         {{ csrf_field() }} 
         <div class="row">     
-            <div class="col-md-6 form-group">
+            <div class="form-group col-md-12 col-sm-6 col-xs-12">
                 <label for="firstname">First Name:</label>
                 <input type="text" class="form-control" name="firstname" id="firstname">
                 @if ($errors->has('firstname'))
@@ -21,7 +21,7 @@
                 </span>
                 @endif
             </div>
-            <div class="col-md-6 form-group">
+            <div class="form-group col-md-12 col-sm-6 col-xs-12">
                 <label for="surname">Surname:</label>
                 <input type="text" class="form-control" name="surname" id="surname">
                 @if ($errors->has('surname'))
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="row">
-        <div class="col-md-6 form-group">
+        <div class="form-group col-md-12 col-sm-6 col-xs-12">
             <label for="surname">Username:</label>
             <input type="text" class="form-control" name="username" id="username">
             @if ($errors->has('username'))
@@ -41,7 +41,7 @@
             </span>
             @endif
         </div>          
-        <div class="col-md-6 form-group">
+        <div class="form-group col-md-12 col-sm-6 col-xs-12">
             <label for="email">Email:</label>
             <input type="email" class="form-control" name="email" id="email">
             @if ($errors->has('email'))
@@ -52,7 +52,7 @@
         </div>
         </div>
         <div class="row">
-        <div class="col-md-6 form-group">
+        <div class="form-group col-md-12 col-sm-6 col-xs-12">
             <label for="pwd">Password:</label>
             <input type="password" class="form-control" name="password">
             @if ($errors->has('password'))
@@ -61,7 +61,7 @@
             </span>
             @endif
         </div>
-        <div class="col-md-6 form-group">
+        <div class="form-group col-md-12 col-sm-6 col-xs-12">
             <label for="cpwd">Confirm Password:</label>
             <input type="password" class="form-control" name="password_confirmation">
             @if ($errors->has('password_confirmation'))

@@ -39,7 +39,8 @@
                         <thead class="bg-light">
                             <tr>
                                 <th scope="col" class="border-0"># ID</th>
-                                <th scope="col" class="border-0">Description</th>
+                                <th scope="col" class="border-0">Image</th>
+                                <th scope="col" class="border-0">Name</th>                                
                                 <th scope="col" class="border-0">Category</th>
                                 <th scope="col" class="border-0">Price</th>
                                 <th scope="col" class="border-0">Discount</th>
@@ -50,7 +51,8 @@
                             @foreach($products as $product)
                             <tr>
                                 <td>{{$product->id}}</td>
-                                <td><span class="btn btn-danger">{{$product->description}}</span></td>
+                                <td><img src="{{$product->mime_type}}" style="width:50px;height:50px"/></td>
+                                <td><span class="btn btn-danger">{{$product->name}}</span></td>
                                 <td>{{$product->product_category->name}}</td>
                                 <td>{{$product->price}} </td>
                                 <td>{{$product->discount}}</td>

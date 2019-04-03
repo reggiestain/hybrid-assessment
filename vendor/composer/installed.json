@@ -497,6 +497,68 @@
         ]
     },
     {
+        "name": "gloudemans/shoppingcart",
+        "version": "2.6.0",
+        "version_normalized": "2.6.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Crinsane/LaravelShoppingcart.git",
+            "reference": "f460ab7312cce32cb428cf39a500a2d16600b1d6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Crinsane/LaravelShoppingcart/zipball/f460ab7312cce32cb428cf39a500a2d16600b1d6",
+            "reference": "f460ab7312cce32cb428cf39a500a2d16600b1d6",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/events": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.*|| 5.6.* || 5.7.*",
+            "illuminate/session": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.*|| 5.6.* || 5.7.*",
+            "illuminate/support": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.*|| 5.6.* || 5.7.*"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9.0",
+            "orchestra/testbench": "~3.1",
+            "phpunit/phpunit": "~5.0 || ~6.0 || ~7.0"
+        },
+        "suggest": {
+            "gloudemans/notify": "Simple flash notifications for Laravel"
+        },
+        "time": "2019-02-04T14:29:34+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider"
+                ],
+                "aliases": {
+                    "Cart": "Gloudemans\\Shoppingcart\\Facades\\Cart"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Gloudemans\\Shoppingcart\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Rob Gloudemans",
+                "email": "info@robgloudemans.nl"
+            }
+        ],
+        "description": "Laravel Shoppingcart",
+        "keywords": [
+            "laravel",
+            "shoppingcart"
+        ]
+    },
+    {
         "name": "guzzlehttp/guzzle",
         "version": "6.3.3",
         "version_normalized": "6.3.3.0",
@@ -1100,6 +1162,76 @@
             "laravel",
             "psysh"
         ]
+    },
+    {
+        "name": "laravelcollective/html",
+        "version": "v5.5.4",
+        "version_normalized": "5.5.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/LaravelCollective/html.git",
+            "reference": "04c596a69975b901f2223eb6eb4adf55354121c2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/LaravelCollective/html/zipball/04c596a69975b901f2223eb6eb4adf55354121c2",
+            "reference": "04c596a69975b901f2223eb6eb4adf55354121c2",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/http": "5.5.*",
+            "illuminate/routing": "5.5.*",
+            "illuminate/session": "5.5.*",
+            "illuminate/support": "5.5.*",
+            "illuminate/view": "5.5.*",
+            "php": ">=7.0.0"
+        },
+        "require-dev": {
+            "illuminate/database": "5.5.*",
+            "mockery/mockery": "~0.9.4",
+            "phpunit/phpunit": "~5.4"
+        },
+        "time": "2018-03-24T00:39:21+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.5-dev"
+            },
+            "laravel": {
+                "providers": [
+                    "Collective\\Html\\HtmlServiceProvider"
+                ],
+                "aliases": {
+                    "Form": "Collective\\Html\\FormFacade",
+                    "Html": "Collective\\Html\\HtmlFacade"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Collective\\Html\\": "src/"
+            },
+            "files": [
+                "src/helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylorotwell@gmail.com"
+            },
+            {
+                "name": "Adam Engebretson",
+                "email": "adam@laravelcollective.com"
+            }
+        ],
+        "description": "HTML and Form Builders for the Laravel Framework",
+        "homepage": "https://laravelcollective.com"
     },
     {
         "name": "league/event",

@@ -15,6 +15,10 @@
 Route::get('/', ['as' => 'home', 'uses' => 'Front\PagesController@home']);
 Route::get('register', ['as' => 'register', 'uses' => 'Front\PagesController@register']);
 Route::post('register', ['as' => 'register.post', 'uses' => 'Auth\RegisterController@register']);
+Route::resource('/cart', 'Front\CartController');
+Route::get('/cart/pupolar', 'Front\CartController@index');
+//Route::put('/cart/update/{id}', ['as' => 'cart.update', 'uses'=>'Front\CartController@update']);
+
 Route::get('/login', ['as' => 'login', 'uses' => 'Front\PagesController@login']);
 Route::post('/login', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
 Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);

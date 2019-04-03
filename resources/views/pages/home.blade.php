@@ -13,7 +13,12 @@
         </div>
     </div>
 </div>-->
-<div class="main_slider">
+<style>
+    .card{
+        border: 1px solid #fff;
+    }   
+</style>
+<div class="main_slider" style="height: 350px !important">
 <div class="row">
 	<div class="col-sm-12 col-md-6 col-lg-6  py-0 pl-3 pr-1 featcard">
 	   <div id="featured" class="carousel slide carousel-fade" data-ride="carousel">
@@ -73,29 +78,30 @@ Anggota Komisi</p>
 			</div>
 						<div class="col-6 pb-2 mg-3	">
 				<div class="card bg-dark text-white">
-		        <img class="card-img img-fluid" src="http://admin.makro.id/media/post_img_sm/review-gsp-amerika-ingin-perdagangan-yang-adil-dan-saling-menguntungkan-1531307731.jpg" alt="">
+		        <img class="card-img img-fluid" src="public/images/banner/banner-4.jpg" alt="">
 		        <div class="card-img-overlay d-flex">
-		          <a href="http://makro.id/review-gsp-amerika-ingin-perdagangan-saling-menguntungkan" class="align-self-end">
+		          <!--<a href="http://makro.id/review-gsp-amerika-ingin-perdagangan-saling-menguntungkan" class="align-self-end">
 		        	<span class="badge">Ekspor</span> 
 		            <h6 class="card-title">Review GSP: Amerika Ingin Perdagangan Saling Menguntungkan</h6>
-		          </a>
+		          </a>-->
 		        </div>
 		      	</div>
 			</div>
 						<div class="col-6 pb-2 mg-4	">
 				<div class="card bg-dark text-white">
-		        <img class="card-img img-fluid" src="http://admin.makro.id/media/post_img_sm/dpr-setujui-penambahan-anggaran-bp-batam-rp565-miliar-1531258457.jpeg" alt="">
+		        <img class="card-img img-fluid" src="public/images/banner/banner-3.jpg" alt="">
 		        <div class="card-img-overlay d-flex">
-		          <a href="http://makro.id/dpr-setujui-penambahan-anggaran-bp-batam-rp565-miliar" class="align-self-end">
+		          <!--<a href="http://makro.id/dpr-setujui-penambahan-anggaran-bp-batam-rp565-miliar" class="align-self-end">
 		        	<span class="badge">Pertumbuhan Ekonomi</span> 
 		            <h6 class="card-title">DPR Setujui Penambahan Anggaran BP Batam Rp565 Miliar</h6>
-		          </a>
+		          </a>-->
 		        </div>
 		      	</div>
 			</div>
 					</div>
 	</div>
-</div>    
+</div> 
+</div> 
 <!-- Banner -->
 
 <!-- New Arrivals -->
@@ -141,7 +147,7 @@ Anggota Komisi</p>
                                 @if($product->price > App\Http\Controllers\Auth\ProductController::Discount($product->price,$product->discount)) <span>R {{ $product->price }} </span> @else  @endif</div>
                         </div>
                     </div>
-                    <div class="red_button add_to_cart_button"><a href="{{route('login')}}">add to cart</a></div>
+                    <div class="red_button add_to_cart_button"><a href="{{route('cart.edit',$product->id)}}">add to cart</a></div>
                 </div>
                 @endforeach
             </div>
@@ -149,16 +155,8 @@ Anggota Komisi</p>
     </div>
 </div>
 </div>
+
 <script>
-$(document).ready(function(){
-      $(".linkfeat").hover(
-        function () {
-            $(".textfeat").show(500);
-        },
-        function () {
-            $(".textfeat").hide(500);
-        }
-    );
-});
+
 </script>
 @endsection

@@ -22,6 +22,7 @@
                                 <ul class="account_selection">
                                     <li><a href="{{route('login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
                                     <li class="reg"><a href="{{route('register')}}"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                    
                                 </ul>
                             </li>
                         </ul>
@@ -48,6 +49,16 @@
                             <li><a href="{{ route('home') }}" style="margin-right: 400px">home</a></li>
                             <li><a href="{{ route('login') }}" >Sign In</a> </li>
                             <li><a href="{{ route('register') }}">Register</a></li>
+                            <li>
+                                        <a href="{{ route('cart.index') }}" style="color:#78787D" class="cart-item">
+                                            <li class="fa fa-shopping-cart fa-2x" aria-hidden="true">                                               
+                                            </li>
+                                              CART
+                                              <span style="background:#FE4C50;color:#fff;width:20px;height:20px;padding:4px 10px 4px 10px;border-radius: 50%">
+                                                 {{Cart::count()}}
+                                              </span>                                         
+                                        </a>    
+                            </li>
                         </ul>
                         <!--<ul class="navbar_user">
                             <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
