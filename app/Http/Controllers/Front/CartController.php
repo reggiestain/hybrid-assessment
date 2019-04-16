@@ -63,9 +63,23 @@ class CartController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
+        //Cart::add($id, $product->name, 1,$product->price, ['size'=>'Medium']);
+        
+        return view('cart.index',compact('product'));
+    }
+    
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function add($id)
+    {
+        $product = Product::find($id);
         Cart::add($id, $product->name, 1,$product->price, ['size'=>'Medium']);
         
-        return back();
+        return redirect()->route('login');
     }
 
     /**

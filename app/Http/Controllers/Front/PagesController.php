@@ -18,6 +18,18 @@ class PagesController extends Controller {
         $categories =  ProductCategory::all();
         return view('pages.home', ['products'=>$products,'categories'=>$categories]);
     }
+    
+    /**
+     * Home view
+     *  
+     * @return mixed
+     */
+    public function options($id) {
+        $products = Product::take(4)->get();
+        $product  = Product::with('product_category')->find($id);
+        //$categories =  ProductCategory::all();
+        return view('pages.options', ['product'=>$product,'side'=>$products]);
+    }
      /**
      * Login view
      *  

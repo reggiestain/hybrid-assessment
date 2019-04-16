@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="col-md-8 offset-2" style="margin-top: 200px">
+<div class="col-lg-8 col-sm-6 col-xs-12" id="log-con" style="margin-top: 200px">
     @if(session()->has('error'))
                         <div class="alert alert-danger">
                             {{ session()->get('error') }}

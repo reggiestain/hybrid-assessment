@@ -139,12 +139,8 @@ class ProductController extends Controller {
         $price = intval($price);
         $discount = intval($discount);
 
-        if ($instance->in_range($price, 50, 100)) {
-            $sellingPrice = $price - ($price * (0 / 100));
-        } elseif ($instance->in_range($price, 112, 115)) {
+        if ($instance->in_range($price, 599, 700)) {
             $sellingPrice = $price - ($price * (0.25 / 100));
-        } elseif ($price > 120) {
-            $sellingPrice = $price - ($price * (0.50 / 100));
         } else {
             $sellingPrice = $price - ($price * (0 / 100));
         }

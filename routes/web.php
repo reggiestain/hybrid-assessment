@@ -13,15 +13,19 @@
 
 //Guest Routes...
 Route::get('/', ['as' => 'home', 'uses' => 'Front\PagesController@home']);
-Route::get('register', ['as' => 'register', 'uses' => 'Front\PagesController@register']);
-Route::post('register', ['as' => 'register.post', 'uses' => 'Auth\RegisterController@register']);
+Route::get('/option/{id}', ['as' => 'options', 'uses' => 'Front\PagesController@options']);
+Route::get('/register', ['as' => 'register', 'uses' => 'Front\PagesController@register']);
+Route::post('/register', ['as' => 'register.post', 'uses' => 'Auth\RegisterController@register']);
 Route::resource('/cart', 'Front\CartController');
 Route::get('/cart/pupolar', 'Front\CartController@index');
+Route::get('/cart/add/{id}', ['as' => 'cart.add', 'uses' =>'Front\CartController@add']);
 //Route::put('/cart/update/{id}', ['as' => 'cart.update', 'uses'=>'Front\CartController@update']);
 
 Route::get('/login', ['as' => 'login', 'uses' => 'Front\PagesController@login']);
 Route::post('/login', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
 Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
+Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('login/{provider}/callback','Auth\LoginController@handleProviderCallback');
 //Auth Routes...
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/dashboard', ['as' => 'auth.products', 'uses' => 'Auth\ProductController@index']);

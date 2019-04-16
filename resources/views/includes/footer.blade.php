@@ -6,7 +6,7 @@
             <div class="col-lg-6">
                 <div class="newsletter_text d-flex flex-column justify-content-center align-items-lg-start align-items-md-center text-center">
                     <h4>Newsletter</h4>
-                    <p>Subscribe to our newsletter and get 20% off your first purchase</p>
+                    <p>Subscribe to our newsletter and get 20% off your first purchase  on selected items</p>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -35,11 +35,11 @@
             <div class="col-lg-6">
                 <div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
                     <ul>
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://web.facebook.com/DavidMadangaZA/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.instagram.com/davidmadanga_/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <!--<li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>-->
+                        <!--<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>-->
                     </ul>
                 </div>
             </div>

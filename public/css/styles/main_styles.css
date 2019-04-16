@@ -788,6 +788,32 @@ section
 	border-bottom: none;
 }
 
+/* Add a black background color to the top navigation */
+.topnav{
+  background-color: #787475;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a{
+  
+  color: #f2f2f2;
+  text-align: center;
+  //padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  //margin-top: 20px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+
+
 /*********************************
 3.6 Logo
 *********************************/
@@ -822,7 +848,7 @@ section
 .main_slider
 {
 	width: 100%;
-	height: 700px;
+	height: 350px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -867,6 +893,11 @@ section
 {
 	background: #FE7C7F !important;
 }
+
+.icon {
+  display: none;
+}
+
 .red_button a
 {
 	display: block;

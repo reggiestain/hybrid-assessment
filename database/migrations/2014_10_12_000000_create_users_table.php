@@ -18,10 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('username',30)->nullable(false)->unique();
             $table->string('firstname',30)->nullable(false);
             $table->string('surname',30)->nullable(false);
-            $table->string('email',50)->nullable(false)->unique();
+            $table->string('email',50)->unique()->nullable()->change;
             $table->integer('user_group_id')->nullable(false)->unsigned()->default(2);
             $table->foreign('user_group_id')->references('id')->on('user_groups');
-            $table->string('password', 250)->nullable(false);
+            $table->string('password')->nullable()->change;
             $table->rememberToken();
             $table->timestamps();
         });
