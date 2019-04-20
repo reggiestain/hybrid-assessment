@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
-class CartController extends Controller {
+class SaveForLaterController extends Controller {
 
     /**
      * Display a listing of the resource.
@@ -70,19 +70,21 @@ class CartController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function add($id) {
-        $product = Product::find($id);
-
-        $duplicates = Cart::search(function ($cartItem, $rowId) use ($id) {
+    public function switchToCart($id) {
+        $product = Cart::instance('saveForLater')->get($id);
+        
+        
+        Cart::instance('saveForLater')->remove($id);
+        $duplicates = Cart::instance('default')->search(function ($cartItem, $rowId) use ($id) {
             return $cartItem->id === $id;
         });
       
         if($duplicates->isNotEmpty()){
            return redirect()->route('options',$id)->with('success','Item is already in your cart.') ;
         }
-        Cart::add($id, $product->name, 1, $product->price, ['image' => $product->mime_type]);
+        Cart::instance('default')->add($id, $product->name, 1, $product->price, ['image' => $product->options->image]);
 
-        return redirect('/cart');
+        return back()->with('success','Item has been moved to cart.');
     }
     
     /**
@@ -91,15 +93,14 @@ class CartController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function SwitchTosaveForLater($id) {
-        
-        $product = Cart::get($id);
-                   Cart::remove($id);
-        Cart::instance('saveForLater')->add($id, $product->name, 1, $product->price, 
-                      ['image' => $product->options->image])->associate('App\Models\Product');
+    public function Switchto($id) {
+        $product = Product::find($id);
+                   Cart::instance('saveForLater')->remove($product->id);
+       
+        Cart::instance('default')->add($id, $product->name, 1, $product->price, 
+                      ['image' => $product->mime_type])->associate('App\Models\Product');
 
-        return redirect('cart')->with('success','Item has been saved for later.') ;
-;
+        return redirect('cart')->with('success','Item is already in your cart.') ;
     }
 
     /**
@@ -111,7 +112,7 @@ class CartController extends Controller {
      */
     public function update(Request $request, $id) {
         Cart::update($id, $request->qty);
-        return back()->with('success','Item has been deleted.');
+        return back();
     }
 
     /**
@@ -121,18 +122,8 @@ class CartController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        Cart::remove($id);
-        return back();
-    }
-    
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function checkout() {        
-        return view('cart.checkout');
+        Cart::instance('saveForLater')->remove($id);
+        return back()->with('success','Saved for later item has been removed!');
     }
 
 }

@@ -1,55 +1,134 @@
-<!-- Newsletter -->
+<style>
+footer.nb-footer {
+background: #222;
+margin-top: 50px;
+border-top: 4px solid #999999; }
+footer.nb-footer .about {
+margin: 0 auto ;
+margin-top: 40px;
+max-width: 1170px;
+text-align: center; }
+footer.nb-footer .about p {
+font-size: 13px;
+color: #999;
+margin-top: 30px; }
+footer.nb-footer .about .social-media {
+margin-top: 15px; }
+footer.nb-footer .about .social-media ul li a {
+display: inline-block;
+width: 45px;
+height: 45px;
+line-height: 45px;
+border-radius: 50%;
+font-size: 16px;
+color: #fff;
+border: 1px solid rgba(255, 255, 255, 0.3); }
+footer.nb-footer .about .social-media ul li a:hover {
+background: #999999;
+color: #fff;
+border-color: #b78c33; }
+footer.nb-footer .footer-info-single {
+margin-top: 30px; }
+footer.nb-footer .footer-info-single .title {
+color: #aaa;
+text-transform: uppercase;
+font-size: 16px;
+border-left: 4px solid #999999;
+padding-left: 5px; }
+footer.nb-footer .footer-info-single ul li a {
+display: block;
+color: #aaa;
+padding: 2px 0; }
+footer.nb-footer .footer-info-single ul li a:hover {
+color: #fe4c50; }
+footer.nb-footer .footer-info-single p {
+font-size: 13px;
+line-height: 20px;
+color: #aaa; }
+footer.nb-footer .copyright {
+margin-top: 15px;
+background: #111;
+padding: 7px 0;
+color: #999; }
+footer.nb-footer .copyright p {
+margin: 0;
+padding: 0; }   
+li{
+ display:inline;   
+}
+</style>
+<footer class="nb-footer">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="about">
+	<img src="images/logo.png" class="img-responsive center-block" alt="">
+	<p>Seams of African Pride</p>
 
-<div class="newsletter">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="newsletter_text d-flex flex-column justify-content-center align-items-lg-start align-items-md-center text-center">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to our newsletter and get 20% off your first purchase  on selected items</p>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <form action="post">
-                    <div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-lg-end justify-content-center">
-                        <input id="newsletter_email" type="email" placeholder="Your email" required="required" data-error="Valid email is required.">
-                        <button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">subscribe</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+	<div class="social-media">
+		<ul class="list-inline">
+			<li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
+			<li><a href="#" title=""><i class="fa fa-twitter"></i></a></li>
+			<li><a href="#" title=""><i class="fa fa-google-plus"></i></a></li>
+			<li><a href="#" title=""><i class="fa fa-linkedin"></i></a></li>
+		</ul>
+	</div>
 </div>
-<footer class="footer">  
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
-                    <ul class="footer_nav">
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Contact us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
-                    <ul>
-                        <li><a href="https://web.facebook.com/DavidMadangaZA/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.instagram.com/davidmadanga_/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        <!--<li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>-->
-                        <!--<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>-->
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="footer_nav_container">
-                   <!-- <div class="cr">©2018 All Rights Reserverd. This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Colorlib</a></div>-->
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+</div>
+
+<div class="col-md-3 col-sm-6">
+<div class="footer-info-single">
+	<h2 class="title">Help Center</h2>
+	<ul class="list-unstyled">
+		<li><a href="#" title=""><i class="fa fa-angle-double-right"></i> How to Pay</a></li>
+		<li><a href="#" title=""><i class="fa fa-angle-double-right"></i> FAQ's</a></li>
+		<li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Sitemap</a></li>
+		<li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Delivery Info</a></li>
+	</ul>
+</div>
+</div>
+
+<div class="col-md-3 col-sm-6">
+<div class="footer-info-single">
+	<h2 class="title">Customer information</h2>
+	<ul class="list-unstyled">
+		<li><a href="#" title=""><i class="fa fa-angle-double-right"></i> About Us</a></li>
+		<li><a href="#" title=""><i class="fa fa-angle-double-right"></i> FAQ's</a></li>
+		<li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Sell Your Items</a></li>
+		<li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
+	</ul>
+</div>
+</div>
+
+<div class="col-md-3 col-sm-6">
+<div class="footer-info-single">
+	<h2 class="title">Security & privacy</h2>
+	<ul class="list-unstyled">
+		<li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Terms Of Use</a></li>
+		<li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Privacy Policy</a></li>
+		<li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Return / Refund Policy</a></li>
+		<li><a href="#" title=""><i class="fa fa-angle-double-right"></i> Store Locations</a></li>
+	</ul>
+</div>
+</div>
+
+<div class="col-md-3 col-sm-6">
+<div class="footer-info-single">
+	<h2 class="title">Payment</h2>
+	<p></p>
+	
+</div>
+</div>
+</div>
+</div>
+
+<section class="copyright">
+<div class="container">
+<div class="row">
+<div class="col-sm-6">
+<p>Copyright © 2018. OKHALA MEDIA.</p>
+</div>
+<div class="col-sm-6"></div>
+</div>
+</div>
+</section>

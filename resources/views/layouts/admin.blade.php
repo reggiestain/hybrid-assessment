@@ -9,11 +9,12 @@ use App\Http\Controllers\Auth\ProductController as Product;
         <title>David Madanga Administrator</title>
         <meta name="description" content="African wax print fabric, Men African wear, Women African wear, African Clothings">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="{{asset('public/fonts/font-awesome-4.7.0/css/font-awesome.css')}}" rel="stylesheet">
-        <link rel="stylesheet" href="{{asset('public/css/styles/bootstrap4/bootstrap.min.css')}}" rel="stylesheet">
-        <link href="{{asset('public/css/styles/all.css')}}" rel="stylesheet">
-        <link href="{{asset('public/css/styles/icons.css')}}" rel="stylesheet">
-        
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--<link rel="stylesheet" href="{{asset('public/fonts/font-awesome-4.7.0/css/font-awesome.css')}}" rel="stylesheet">-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="styles/shards-dashboards.1.1.0.min.css">
+        <link rel="stylesheet" href="styles/extras.1.1.0.min.css">       
         <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href="{{ asset('public/css/admin/shards-dashboards.1.1.0.min.css') }}">
         <link rel="stylesheet" href="{{asset('public/css/styles/datatable.css')}}">   
         <script async defer src="{{asset('public/js/buttons.js')}}"></script>

@@ -18,6 +18,7 @@
         border: 1px solid #fff;
     }   
 </style>
+@if(!Auth::user())
 <div class="main_slider">
     <div class="row">
         <div class="col-lg-6 col-xs-12 py-0 pl-3 pr-1 featcard">
@@ -104,7 +105,7 @@
     </div> 
 </div> 
 <!-- Banner -->
-
+@endif
 <!-- New Arrivals -->
 
 <div class="new_arrivals">

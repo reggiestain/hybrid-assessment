@@ -55,7 +55,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     public function identities() {
-        return $this->hasMany('App\Model\SocialIdentity');
+        return $this->hasMany('App\Models\SocialIdentity');
     }
 
     /**

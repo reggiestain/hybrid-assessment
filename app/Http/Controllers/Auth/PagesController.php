@@ -26,8 +26,12 @@ class PagesController extends Controller {
         ]);
     }
     
-    public function Dashboard() {
-        return view('Auth.dashboard');
+    public function dashboard() {
+        return view('auth.dashboard');
+    }
+    
+    public function profile() {
+        return view('auth.profile');
     }
     
     protected function create(array $data) {

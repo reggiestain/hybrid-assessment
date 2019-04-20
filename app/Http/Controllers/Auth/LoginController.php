@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Laravel\Socialite\Facades\Socialite;
-use SocialIdentity;
+use App\Models\SocialIdentity;
+use App\Models\User;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class LoginController extends Controller {
 
@@ -18,10 +20,23 @@ class LoginController extends Controller {
      *
      * @return Response
      */
+    public function __construct() {
+        if (!Auth::check()){
+            return redirect('/');
+        }
+    }
+    
     public function login(Request $request) {
+
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             //Authentication passed...
+            if (Auth::user()->user_group_id == 2) {
+                if (Cart::count() > 0) {
+                return redirect('/cart');
+            }
+                return redirect('/');
+            }
             return redirect('dashboard');
         }
         return redirect('login')->with('error', 'Invalid username or password.');
@@ -39,8 +54,15 @@ class LoginController extends Controller {
         }
 
         $authUser = $this->findOrCreateUser($user, $provider);
+
         Auth::login($authUser, true);
-        return redirect($this->redirectTo);
+        if (Auth::user()->user_group_id == 2) {
+            if (Cart::count() > 0) {
+                return redirect('/cart');
+            }
+            return redirect('/');
+        }
+        return redirect('dashboard');
     }
 
     public function findOrCreateUser($providerUser, $provider) {
@@ -56,7 +78,7 @@ class LoginController extends Controller {
             if (!$user) {
                 $user = User::create([
                         'email' => $providerUser->getEmail(),
-                        'name' => $providerUser->getName(),
+                        'firstname' => $providerUser->getName(),
                 ]);
             }
 
@@ -68,7 +90,7 @@ class LoginController extends Controller {
             return $user;
         }
     }
-     
+
     public function logout() {
         Auth::logout();
         return redirect('/');

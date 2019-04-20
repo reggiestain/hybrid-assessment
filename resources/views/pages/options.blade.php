@@ -65,7 +65,7 @@
     }
 </style>
 <!-- Demo page craeted by https://github.com/petr-goca -->
-<section class="product-detail">
+<section class="product-detail">  
     <div itemscope >   
         <div class="shadow">
             <div class="_cont detail-top">
@@ -95,6 +95,13 @@
                         </div>
                     </div>
                     <div class="right-col">
+                        @if($message = Session::get('success'))
+                        <br><br>
+                        <div class="alert alert-success">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            {{ $message }}
+                        </div>   
+                        @endif
                         <h1 itemprop="name">{{$product->name}}</h1>
                         <div itemprop="offers" itemscope itemtype="">
                             <meta itemprop="priceCurrency" content="">
@@ -137,7 +144,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="swatch clearfix" data-option-index="1">
+                                <!--<div class="swatch clearfix" data-option-index="1">
                                     <div class="heder">Color</div>
                                     <div data-value="Blue" class="swatch-element color blue available">
                                         <div class="tooltip">Blue</div>
@@ -166,7 +173,7 @@
                                 </div>
                                 <div class="guide">
                                     <a>Size guide</a>
-                                </div>
+                                </div>-->
                             </div>
                             <!-- <form method="post" enctype="multipart/form-data" id="AddToCartForm"> -->
                             <form id="AddToCartForm">
@@ -278,7 +285,7 @@
                                         <div class="t">XXL</div>
                                     </div>
                                 </div>
-                                <div class="variant">
+                                <!--<div class="variant">
                                     <div class="var color blue available">
                                         <div class="c" style="background-color: blue;"></div>
                                     </div>
@@ -288,7 +295,7 @@
                                     <div class="var color yellow available">
                                         <div class="c" style="background-color: yellow;"></div>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                         </span>
                     </a>
@@ -315,7 +322,7 @@
             </div>
             <div class="modal-body">
                 <div class="form-group" style="margin-left:90px">
-                <img src="{{URL::asset($product->mime_type)}}" style="width:100px;height:100px" class="img-responsive" alt="Cinque Terre">
+                    <img src="{{URL::asset($product->mime_type)}}" style="width:100px;height:100px" class="img-responsive" alt="Cinque Terre">
                 </div>
                 <div class="form-group">
                     <input style="color:white" type="button" onclick="location.href ='{{route('cart.add',$product->id)}}'" class="btn btn-primary form-control" value="Sign in to checkout">

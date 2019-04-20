@@ -53,16 +53,16 @@
             @include('includes.footer')           
             <!-- End Footer -->
         </div>
-        
+
         <script src="{{ URL::asset('public/js/popper.js') }}"></script>
         <script src="{{ URL::asset('public/js/bootstrap.min.js') }}"></script>
         <script src="{{ URL::asset('public/js/plugins/Isotope/isotope.pkgd.min.js') }}"></script>
         <script src="{{ URL::asset('public/js/plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
         <script src="{{ URL::asset('public/js/plugins/easing/easing.js') }}"></script>
         <script src="{{ URL::asset('public/js/custom.js') }}"></script>
-        
+
         <script>
-$(document).ready(function() {
+$(document).ready(function () {
     $(document).on("click", ".buy-now", function (e) {
         e.preventDefault();
         $("#regModal").modal('hide');
@@ -83,14 +83,29 @@ $(document).ready(function() {
             }
     );
 
-    $(document).on("click", ".cart-item", function (e) {
-        e.preventDefault();
-        $("#cartModal").modal();
-        $.get("/cart", function (data, status) {
-            $(".cart-content").html(data);
-        });
+    $(document).on("click", ".car-item", function (e) {
+        //e.preventDefault();
+        //$("#cartModal").modal();
+        $.ajax({
+        headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') },
+        url: "{{ url('/cart/item') }}",
+        type: 'GET',
+        //cache: false,
+        datatype: 'html',
+        beforeSend: function() {
+            //something before send
+        },
+        success: function(data) {
+            alert(data);
+          $(".cart-content").html(data); 
+        },
+        error: function(xhr,textStatus,thrownError) {
+            alert(xhr + "\n" + textStatus + "\n" + thrownError);
+        }
     });
-    
+
+    });
+
 });
         </script>
 

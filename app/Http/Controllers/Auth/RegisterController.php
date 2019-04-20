@@ -48,7 +48,7 @@ use RegistersUsers;
      */
     protected function validator(array $data) {
         return Validator::make($data, [
-                'username' => 'required|string|unique:users',
+                //'username' => 'required|string|unique:users',
                 'firstname' => 'required',
                 'surname' => 'required',
                 'email' => 'required|string|unique:users',
@@ -66,7 +66,7 @@ use RegistersUsers;
     protected function create(array $data) {
         
         $user = User::create([
-                'username' => $data['username'],
+                //'username' => $data['username'],
                 'firstname' => $data['firstname'],
                 'surname' => $data['surname'],
                 'email' => $data['email'],
@@ -88,9 +88,9 @@ use RegistersUsers;
     public function register(Request $request) {
 
         $validator = $this->validator($request->all());
-
+        
         if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator);
+            return Redirect::back()->withErrors($validator)->withInput();
         }
         // create the user
         $user = $this->create($request->all());
