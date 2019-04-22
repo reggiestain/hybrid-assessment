@@ -16,7 +16,8 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('public/css/styles/main_styles.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('public/css/styles/options.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('public/css/styles/responsive.css') }}">
-        <script src="{{ URL::asset('public/js/jquery-3.2.1.min.js') }}"></script>
+        <script src="{{ URL::asset('public/js/jquery-3.2.1.min.js') }}"></script> 
+        
     </head>
     <body>
         <div class="super_container">
@@ -62,6 +63,7 @@
         <script src="{{ URL::asset('public/js/custom.js') }}"></script>
 
         <script>
+
 $(document).ready(function () {
     $(document).on("click", ".buy-now", function (e) {
         e.preventDefault();
@@ -87,22 +89,22 @@ $(document).ready(function () {
         //e.preventDefault();
         //$("#cartModal").modal();
         $.ajax({
-        headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') },
-        url: "{{ url('/cart/item') }}",
-        type: 'GET',
-        //cache: false,
-        datatype: 'html',
-        beforeSend: function() {
-            //something before send
-        },
-        success: function(data) {
-            alert(data);
-          $(".cart-content").html(data); 
-        },
-        error: function(xhr,textStatus,thrownError) {
-            alert(xhr + "\n" + textStatus + "\n" + thrownError);
-        }
-    });
+            headers: {'X-CSRF-Token': $('meta[name=_token]').attr('content')},
+            url: "{{ url('/cart/item') }}",
+            type: 'GET',
+            //cache: false,
+            datatype: 'html',
+            beforeSend: function () {
+                //something before send
+            },
+            success: function (data) {
+                alert(data);
+                $(".cart-content").html(data);
+            },
+            error: function (xhr, textStatus, thrownError) {
+                alert(xhr + "\n" + textStatus + "\n" + thrownError);
+            }
+        });
 
     });
 
@@ -110,6 +112,7 @@ $(document).ready(function () {
         </script>
 
         <script>
+
             window.dataLayer = window.dataLayer || [];
             function gtag() {
                 dataLayer.push(arguments);
@@ -118,7 +121,7 @@ $(document).ready(function () {
 
             gtag('config', 'UA-136341171-1');
         </script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key={{env('PLACES_API')}}&libraries=places&callback=initAutocomplete" async defer></script>
     </body>
 
 </html>       

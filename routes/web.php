@@ -19,8 +19,8 @@ Route::post('/register', ['as' => 'register.post', 'uses' => 'Auth\RegisterContr
 Route::resource('/cart','Front\CartController');
 Route::post('cart/switchToSaveForlater/{product}',['as' => 'cart.saveforlater', 'uses' =>'Front\CartController@SwitchTosaveForLater']);
 Route::put('cart/update/{product}',['as' => 'cart.update', 'uses' =>'Front\CartController@update']);
-Route::delete('saveForLater/destroy/{product}',['as' => 'saveforlater.destroy', 'uses' =>'Front\saveForLaterController@destroy']);
-Route::post('saveForLater/switchToCart/{product}',['as' => 'saveForLater.switchToCart', 'uses' =>'Front\saveForLaterController@switchToCart']);
+Route::delete('saveForLater/destroy/{product}',['as' => 'saveforlater.destroy', 'uses' =>'Front\SaveForLaterController@destroy']);
+Route::post('saveForLater/switchToCart/{product}',['as' => 'saveForLater.switchToCart', 'uses' =>'Front\SaveForLaterController@switchToCart']);
 Route::get('/cart/add/{id}', ['as' => 'cart.add', 'uses' =>'Front\CartController@add']);
 Route::get('/policy',['as' => 'policy','uses' =>'Front\PagesController@policy']);
 Route::get('/back',['as' => 'back','uses' =>'Front\PagesController@back']);

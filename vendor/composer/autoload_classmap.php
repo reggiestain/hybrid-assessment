@@ -6,6 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AlbertCht\\InvisibleReCaptcha\\Facades\\InvisibleReCaptcha' => $vendorDir . '/albertcht/invisible-recaptcha/src/Facades/InvisibleReCaptcha.php',
+    'AlbertCht\\InvisibleReCaptcha\\InvisibleReCaptcha' => $vendorDir . '/albertcht/invisible-recaptcha/src/InvisibleReCaptcha.php',
+    'AlbertCht\\InvisibleReCaptcha\\InvisibleReCaptchaServiceProvider' => $vendorDir . '/albertcht/invisible-recaptcha/src/InvisibleReCaptchaServiceProvider.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Admin\\PagesController' => $baseDir . '/app/Http/Controllers/Admin/PagesController.php',
@@ -21,6 +24,7 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\Front\\CartController' => $baseDir . '/app/Http/Controllers/Front/CartController.php',
     'App\\Http\\Controllers\\Front\\PagesController' => $baseDir . '/app/Http/Controllers/Front/PagesController.php',
+    'App\\Http\\Controllers\\Front\\SaveForLaterController' => $baseDir . '/app/Http/Controllers/Front/SaveForLaterController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Admin' => $baseDir . '/app/Http/Middleware/Admin.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
@@ -34,6 +38,7 @@ return array(
     'App\\Models\\PasswordReset' => $baseDir . '/app/Models/PasswordReset.php',
     'App\\Models\\Product' => $baseDir . '/app/Models/Product.php',
     'App\\Models\\ProductCategory' => $baseDir . '/app/Models/ProductCategory.php',
+    'App\\Models\\SocialIdentity' => $baseDir . '/app/Models/SocialIdentity.php',
     'App\\Models\\Transaction' => $baseDir . '/app/Models/Transaction.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Models\\UserGroups' => $baseDir . '/app/Models/UserGroups.php',

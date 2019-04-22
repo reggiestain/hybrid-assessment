@@ -38,7 +38,6 @@
             margin-top: 120px !important;
         }
     }
-
 </style>
 
 <div class="panel panel-info" style="">

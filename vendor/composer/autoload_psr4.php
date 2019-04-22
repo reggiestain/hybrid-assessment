@@ -69,5 +69,6 @@ return array(
     'Cron\\' => array($vendorDir . '/dragonmantank/cron-expression/src/Cron'),
     'Collective\\Html\\' => array($vendorDir . '/laravelcollective/html/src'),
     'App\\' => array($baseDir . '/app'),
+    'AlbertCht\\InvisibleReCaptcha\\' => array($vendorDir . '/albertcht/invisible-recaptcha/src'),
     '' => array($vendorDir . '/nesbot/carbon/src'),
 );

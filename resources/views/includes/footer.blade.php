@@ -62,15 +62,17 @@ li{
 <div class="row">
 <div class="col-sm-12">
 <div class="about">
-	<img src="images/logo.png" class="img-responsive center-block" alt="">
-	<p>Seams of African Pride</p>
-
+	<!--<img src="" class="img-responsive center-block" alt="">-->
+	<p>David Madanga is all about inspiring the African child to exude self confidence and have pride in their African heritage, and we do that throught the universal language of fashion.
+    <br>We inspire young africans to “dress your African pride”, make a statement wherever you are in the world dresssed in David Madanga’s clothing range.
+    <br>“The joy of dressing up is in the art of feeling good”, so choosing an African garment to wear can mean a lot more tha just choosing a style that flatters you.
+    </p>
 	<div class="social-media">
 		<ul class="list-inline">
-			<li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
+			<li><a href="https://www.facebook.com/DavidMadangaZA/" title=""><i class="fa fa-facebook"></i></a></li>
 			<li><a href="#" title=""><i class="fa fa-twitter"></i></a></li>
 			<li><a href="#" title=""><i class="fa fa-google-plus"></i></a></li>
-			<li><a href="#" title=""><i class="fa fa-linkedin"></i></a></li>
+			<li><a href="https://www.linkedin.com/company/david-madanga-pty-ltd?originalSubdomain=sg" title=""><i class="fa fa-linkedin"></i></a></li>
 		</ul>
 	</div>
 </div>

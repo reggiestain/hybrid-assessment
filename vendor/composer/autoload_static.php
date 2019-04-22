@@ -160,6 +160,7 @@ class ComposerStaticInit6760d3a07091f185474a6bccebe06243
         'A' => 
         array (
             'App\\' => 4,
+            'AlbertCht\\InvisibleReCaptcha\\' => 29,
         ),
     );
 
@@ -419,6 +420,10 @@ class ComposerStaticInit6760d3a07091f185474a6bccebe06243
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
+        'AlbertCht\\InvisibleReCaptcha\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/albertcht/invisible-recaptcha/src',
+        ),
     );
 
     public static $fallbackDirsPsr4 = array (
@@ -454,6 +459,9 @@ class ComposerStaticInit6760d3a07091f185474a6bccebe06243
     );
 
     public static $classMap = array (
+        'AlbertCht\\InvisibleReCaptcha\\Facades\\InvisibleReCaptcha' => __DIR__ . '/..' . '/albertcht/invisible-recaptcha/src/Facades/InvisibleReCaptcha.php',
+        'AlbertCht\\InvisibleReCaptcha\\InvisibleReCaptcha' => __DIR__ . '/..' . '/albertcht/invisible-recaptcha/src/InvisibleReCaptcha.php',
+        'AlbertCht\\InvisibleReCaptcha\\InvisibleReCaptchaServiceProvider' => __DIR__ . '/..' . '/albertcht/invisible-recaptcha/src/InvisibleReCaptchaServiceProvider.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Admin\\PagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PagesController.php',
@@ -469,6 +477,7 @@ class ComposerStaticInit6760d3a07091f185474a6bccebe06243
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Front\\CartController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/CartController.php',
         'App\\Http\\Controllers\\Front\\PagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/PagesController.php',
+        'App\\Http\\Controllers\\Front\\SaveForLaterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/SaveForLaterController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Admin' => __DIR__ . '/../..' . '/app/Http/Middleware/Admin.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -482,6 +491,7 @@ class ComposerStaticInit6760d3a07091f185474a6bccebe06243
         'App\\Models\\PasswordReset' => __DIR__ . '/../..' . '/app/Models/PasswordReset.php',
         'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
         'App\\Models\\ProductCategory' => __DIR__ . '/../..' . '/app/Models/ProductCategory.php',
+        'App\\Models\\SocialIdentity' => __DIR__ . '/../..' . '/app/Models/SocialIdentity.php',
         'App\\Models\\Transaction' => __DIR__ . '/../..' . '/app/Models/Transaction.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\UserGroups' => __DIR__ . '/../..' . '/app/Models/UserGroups.php',

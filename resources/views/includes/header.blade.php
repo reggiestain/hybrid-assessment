@@ -23,6 +23,14 @@
     }
 }
 
+@media only screen and (max-width: 600px)
+{
+    .trans_300{
+        top: -80px !important;
+    }
+   
+}
+
 @media only screen and (max-width: 479px)
 {
     .main_slider
@@ -32,7 +40,7 @@
         //height: calc(100vh - 70px);
         /*height: 80vw;*/
         min-height: auto;
-        margin-top: 70px;
+        //margin-top: 70px;
     }
     .new_arrivals{
         margin-top: 150px; 
@@ -40,9 +48,7 @@
 }
 </style>
 <header class="header trans_300">
-
     <!-- Top Navigation -->
-
     <div class="top_nav">
         <div class="container">
             <div class="row">
@@ -52,8 +58,7 @@
                 <div class="col-md-6 text-right">
                     <div class="top_nav_right">
                         <ul class="top_nav_menu">
-
-                            <!-- Currency / Language / My Account -->
+                            <!--Currency / Language / My Account -->
                             <!--<li class="account">
                                 <a href="#">                                   
                                     Account                                    
@@ -71,9 +76,7 @@
             </div>
         </div>
     </div>
-
     <!-- Main Navigation -->
-
     <div class="main_nav_container">
         <div class="container">
             <div class="row">
@@ -175,7 +178,6 @@
 </header>
 <script>
     function myFunction() {
-        alert();
         var x = document.getElementById("myTopnav");
         if (x.className === "navbar_menu") {
             x.className += " responsive";

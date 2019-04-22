@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=7.1.3",
+        "albertcht/invisible-recaptcha": "^1.9",
         "fideloper/proxy": "^4.0",
         "gloudemans/shoppingcart": "^2.6",
         "guzzlehttp/guzzle": "~6.2",
