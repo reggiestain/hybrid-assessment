@@ -13,8 +13,8 @@ class ComposerStaticInit6760d3a07091f185474a6bccebe06243
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
@@ -156,6 +156,11 @@ class ComposerStaticInit6760d3a07091f185474a6bccebe06243
         array (
             'Cron\\' => 5,
             'Collective\\Html\\' => 16,
+        ),
+        'B' => 
+        array (
+            'Billow\\Utilities\\' => 17,
+            'Billow\\' => 7,
         ),
         'A' => 
         array (
@@ -416,6 +421,14 @@ class ComposerStaticInit6760d3a07091f185474a6bccebe06243
         array (
             0 => __DIR__ . '/..' . '/laravelcollective/html/src',
         ),
+        'Billow\\Utilities\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/billowapp/show-me-the-money/src',
+        ),
+        'Billow\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/billowapp/payfast/src',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -476,6 +489,7 @@ class ComposerStaticInit6760d3a07091f185474a6bccebe06243
         'App\\Http\\Controllers\\Auth\\TransactionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/TransactionController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Front\\CartController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/CartController.php',
+        'App\\Http\\Controllers\\Front\\CheckoutController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/CheckoutController.php',
         'App\\Http\\Controllers\\Front\\PagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/PagesController.php',
         'App\\Http\\Controllers\\Front\\SaveForLaterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/SaveForLaterController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -488,6 +502,7 @@ class ComposerStaticInit6760d3a07091f185474a6bccebe06243
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\AccountBalance' => __DIR__ . '/../..' . '/app/Models/AccountBalance.php',
         'App\\Models\\ActivationKey' => __DIR__ . '/../..' . '/app/Models/ActicationKey.php',
+        'App\\Models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
         'App\\Models\\PasswordReset' => __DIR__ . '/../..' . '/app/Models/PasswordReset.php',
         'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
         'App\\Models\\ProductCategory' => __DIR__ . '/../..' . '/app/Models/ProductCategory.php',
@@ -504,6 +519,11 @@ class ComposerStaticInit6760d3a07091f185474a6bccebe06243
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Traits\\ActivationKeyTrait' => __DIR__ . '/../..' . '/app/Traits/ActivationKeyTrait.php',
+        'Billow\\Contracts\\PaymentProcessor' => __DIR__ . '/..' . '/billowapp/payfast/src/Contracts/PaymentProcessor.php',
+        'Billow\\Payfast' => __DIR__ . '/..' . '/billowapp/payfast/src/Payfast.php',
+        'Billow\\PayfastServiceProvider' => __DIR__ . '/..' . '/billowapp/payfast/src/PayfastServiceProvider.php',
+        'Billow\\Utilities\\Facades\\Money' => __DIR__ . '/..' . '/billowapp/show-me-the-money/src/Facades/Money.php',
+        'Billow\\Utilities\\Money' => __DIR__ . '/..' . '/billowapp/show-me-the-money/src/Money.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\CarbonPeriod' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonPeriod.php',

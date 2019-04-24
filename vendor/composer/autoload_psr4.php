@@ -68,6 +68,8 @@ return array(
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'Cron\\' => array($vendorDir . '/dragonmantank/cron-expression/src/Cron'),
     'Collective\\Html\\' => array($vendorDir . '/laravelcollective/html/src'),
+    'Billow\\Utilities\\' => array($vendorDir . '/billowapp/show-me-the-money/src'),
+    'Billow\\' => array($vendorDir . '/billowapp/payfast/src'),
     'App\\' => array($baseDir . '/app'),
     'AlbertCht\\InvisibleReCaptcha\\' => array($vendorDir . '/albertcht/invisible-recaptcha/src'),
     '' => array($vendorDir . '/nesbot/carbon/src'),

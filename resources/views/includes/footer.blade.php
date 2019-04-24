@@ -69,10 +69,10 @@ li{
     </p>
 	<div class="social-media">
 		<ul class="list-inline">
-			<li><a href="https://www.facebook.com/DavidMadangaZA/" title=""><i class="fa fa-facebook"></i></a></li>
-			<li><a href="#" title=""><i class="fa fa-twitter"></i></a></li>
-			<li><a href="#" title=""><i class="fa fa-google-plus"></i></a></li>
-			<li><a href="https://www.linkedin.com/company/david-madanga-pty-ltd?originalSubdomain=sg" title=""><i class="fa fa-linkedin"></i></a></li>
+			<li><a href="https://www.facebook.com/DavidMadangaZA/" target="_blank" title=""><i class="fa fa-facebook"></i></a></li>
+			<li><a href="#" target="_blank" title=""><i class="fa fa-twitter"></i></a></li>
+			<li><a href="#" target="_blank" title=""><i class="fa fa-google-plus"></i></a></li>
+			<li><a href="https://www.linkedin.com/company/david-madanga-pty-ltd?originalSubdomain=sg" target="_blank" title=""><i class="fa fa-linkedin"></i></a></li>
 		</ul>
 	</div>
 </div>

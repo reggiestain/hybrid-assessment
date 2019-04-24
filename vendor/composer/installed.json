@@ -61,6 +61,83 @@
         ]
     },
     {
+        "name": "billowapp/payfast",
+        "version": "0.1.29",
+        "version_normalized": "0.1.29.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/billowapp/payfast.git",
+            "reference": "437751bb6292b27d96d9521e43b9549782380a87"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/billowapp/payfast/zipball/437751bb6292b27d96d9521e43b9549782380a87",
+            "reference": "437751bb6292b27d96d9521e43b9549782380a87",
+            "shasum": ""
+        },
+        "require": {
+            "billowapp/show-me-the-money": "^0.1.2",
+            "illuminate/http": "^5.4",
+            "illuminate/support": "^5.4"
+        },
+        "require-dev": {
+            "symfony/var-dumper": "^3.0"
+        },
+        "time": "2017-08-27T06:08:50+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Billow\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Laravel 5.4 package for processing ITN payments through payfast.co.za",
+        "keywords": [
+            "laravel",
+            "package",
+            "payfast"
+        ]
+    },
+    {
+        "name": "billowapp/show-me-the-money",
+        "version": "v0.1.4",
+        "version_normalized": "0.1.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/billowapp/show-me-the-money.git",
+            "reference": "a024b3d18f79b99a9c843efa42aa3e77572708c8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/billowapp/show-me-the-money/zipball/a024b3d18f79b99a9c843efa42aa3e77572708c8",
+            "reference": "a024b3d18f79b99a9c843efa42aa3e77572708c8",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "^5.2"
+        },
+        "time": "2018-03-21T13:05:58+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Billow\\Utilities\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Warren Hansen",
+                "email": "warren@billow.co.za"
+            }
+        ],
+        "description": "Super simple money class for laravel and we mean simple."
+    },
+    {
         "name": "dnoegel/php-xdg-base-dir",
         "version": "0.1",
         "version_normalized": "0.1.0.0",

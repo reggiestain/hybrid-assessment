@@ -10,7 +10,6 @@
   | contains the "web" middleware group. Now create something great!
   |
  */
-
 //Guest Routes...
 Route::get('/', ['as' => 'home', 'uses' => 'Front\PagesController@home']);
 Route::get('/option/{id}', ['as' => 'options', 'uses' => 'Front\PagesController@options']);
@@ -25,11 +24,13 @@ Route::get('/cart/add/{id}', ['as' => 'cart.add', 'uses' =>'Front\CartController
 Route::get('/policy',['as' => 'policy','uses' =>'Front\PagesController@policy']);
 Route::get('/back',['as' => 'back','uses' =>'Front\PagesController@back']);
 Route::get('/checkout',['as' => 'checkout','uses' =>'Front\CartController@checkout']);
+Route::post('/checkout/confirmPayment',['as' => 'checkout.payment','uses' =>'Front\CheckoutController@confirmPayment']);
 Route::get('/login', ['as' => 'login', 'uses' => 'Front\PagesController@login']);
 Route::post('/login', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
 Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('login/{provider}/callback','Auth\LoginController@handleProviderCallback');
+
 //Auth Routes...
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/dashboard', ['as' => 'auth.products', 'uses' => 'Auth\ProductController@index']);

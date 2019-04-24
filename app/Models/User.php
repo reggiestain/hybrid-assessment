@@ -53,6 +53,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function user_groups() {
         return $this->belongsTo(UserGroups::class);
     }
+    
+    public function orders() {
+        return $this->hasMany('App\Modes\Order');
+    }
 
     public function identities() {
         return $this->hasMany('App\Models\SocialIdentity');

@@ -10,6 +10,7 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Models\SocialIdentity;
 use App\Models\User;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller {
 
@@ -27,6 +28,14 @@ class LoginController extends Controller {
     }
     
     public function login(Request $request) {
+        
+        $validator = Validator::make($request->all(),[
+            'g-recaptcha-response' => 'required|captcha'
+        ]);
+        
+        if ($validator->fails()) {
+            return Redirect::back()->withErrors($validator)->withInput();
+        }
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {

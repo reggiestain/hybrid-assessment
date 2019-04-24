@@ -61,11 +61,10 @@
                     {{ $message }}
                 </div>
                 @endif
-                <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                <form class="form-horizontal" method="POST" action="{{ route('login.post') }}">
                     <fieldset>
                         <div class="form-group">
                             {{ csrf_field() }}
-                            <input type="hidden" name="url" value="{{$action}}"/>
                             <input id="textinput" name="email" type="email" placeholder="Email" class="form-control input-md"> 
                         </div>
                         <div class="form-group">
@@ -73,6 +72,7 @@
                         </div>
                         <!--<div class="spacing"><a href="#"><small> Forgot Password?</small></a><br/></div>-->
                         <!--<div class="spacing"><input type="checkbox" name="checkboxes" id="checkboxes-0" value="1"><small> Remember me</small></div>-->
+                        @captcha
                         <div class="form-group">
                             <button type="submit" class="btn btn-success" style="width:100%">Login</button>
                         </div>
@@ -81,10 +81,10 @@
             </div>
 
             <div class="col-md-4" id="log-soc">
-                <a id="google-button" <a href="{{ url('/login/facebook/',$action) }}" class="btn btn-block btn-social btn-facebook">
+                <a id="google-button" <a href="{{ url('/login/facebook/') }}" class="btn btn-block btn-social btn-facebook">
                         <i class="fa fa-facebook"></i> Sign in with Facebook
                     </a><br/>
-                    <a href="{{ url('/login/twitter/',$action) }}" class="btn btn-block btn-social btn-twitter">
+                    <a href="{{ url('/login/twitter/') }}" class="btn btn-block btn-social btn-twitter">
                         <span class="fa fa-twitter"></span> Sign in with Twitter
                     </a><br/>
                     <a id="google-button" class="btn btn-block btn-social btn-google">

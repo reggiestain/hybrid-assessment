@@ -449,8 +449,8 @@
         font-size:1.4em;
     }
     .pac-container {
-    z-index: 1051 !important;
-}
+        z-index: 1051 !important;
+    }
 </style>
 
 @if(Cart::count() == 0)
@@ -554,11 +554,10 @@
                 <div class="total-value final-value" id="basket-total">{{Cart::subtotal()}}</div>
             </div>
             <div class="summary-checkout">
-                <button class="btn btn-success checkout-cta s-checkout"><a href="{{route('login')}}" style="color:#fff">Sign in to Checkout</a></button><br>
+                <button class="btn btn-success checkout-cta"><a href="{{route('login')}}" style="color:#fff">Sign in to Checkout</a></button><br>
                 <button class="btn btn-default checkout-cta s-checkout"><a href="#" style="color:#fff">Checkout as Guest</a></button>
             </div>
         </div>
-
     </aside>       
 </main>
 @endif
@@ -606,89 +605,142 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header text-center">       
-                <h4 class="modal-title w-100"></h4>
+                <h4 class="modal-title w-100">Please enter delivery address</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <form id="contact-form" method="post" action="contact.php" role="form">
+            <form id="check-form" role="form">
+                {{ csrf_field() }}
                 <div class="modal-body">               
                     <div class="messages"></div>
                     <div class="controls">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_name">Firstname *</label>
-                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-                                    <div class="help-block with-errors"></div>
+                        <div class="delivery">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_name">Firstname *</label>
+                                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Enter your firstname" required="required" data-error="Firstname is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_lastname">Lastname *</label>
+                                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Enter your lastname" required="required" data-error="Lastname is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_email">Email *</label>
+                                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Enter your email" required="required" data-error="Valid email is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>                     
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_email">Phone Number *</label>
+                                        <input id="form_email" type="text" name="mobile" class="form-control" placeholder="Enter your phone number" required="required" data-error="Valid phone number is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_lastname">Lastname *</label>
-                                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-                                    <div class="help-block with-errors"></div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">   
+                                    <div id="locationField" class="form-group">
+                                        <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" name="address" class="form-control" type="text"/>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div class="row"> 
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Street Number</label>
+                                        <input type="text" id="street_number" name="street_number" class="form-control" disabled="true">
+                                        <div class="help-block with-errors"></div>
+                                    </div>                                
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>Street address</label>
+                                        <input type="text" class="form-control" id="route" name="street_name" disabled="true"/>
+                                    </div>
                                 </div>
                             </div>
-                        </div> 
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="form_email">Email *</label>
-                                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-                                    <div class="help-block with-errors"></div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input type="text" class="form-control" id="locality" name="city" disabled="true"/>
+                                    </div>
                                 </div>
                             </div>
-                        </div><br>
-                        <div class="row">
-                            <div class="col-md-12">   
-                                <div id="locationField" class="form-group">
-                                    <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" class="form-control" type="text"/>
+                            <div class="row">                      
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Province</label>
+                                        <input type="text" class="form-control" id="administrative_area_level_1" name="province" disabled="true"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Area Code</label>
+                                        <input type="text" id="postal_code" name="post_code" class="form-control" disabled="true">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div><br>
-                        <div class="row"> 
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Street address</label>
-                                    <input type="text" id="street_number" name="surname" class="form-control" disabled="true">
-                                    <div class="help-block with-errors"></div>
-                                </div>                                
-                            </div>
-                            <div class="col-md-8">
-                             <div class="form-group">
-                             <label>Street address</label>
-                             <input type="text" class="form-control" id="route" disabled="true"/>
-                             </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Country</label>
+                                        <input id="country" type="text" name="country" class="form-control" disabled="true">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>City</label>
-                                    <input type="text" class="form-control" id="locality" name="city" disabled="true"/>
+                        <div class="shop-cart" style="display:none">
+                            <div class="items">
+                                <div class="col-md-12">
+                                    <table class="table table-bordered">
+                                        <thead style="font-size: 18px">
+                                        <th>
+                                            ITEM(s)
+                                        </th>
+                                        <th>
+                                            QTY
+                                        </th>
+                                        <th>
+                                            PRICE
+                                        </th>
+                                        </thead>
+                                        @foreach ($cartItems as $item)
+                                        <tr>                   
+                                            <td>
+                                                <ul>
+
+                                                    <li style="display:list-item;font-size: 16px">{{$item->name}}</li>
+                                                    <input type="hidden" name="items[]" value="{{$item->name}}" />
+                                                </ul>
+                                            </td>
+                                            <td style="font-size: 16px">
+                                                {{$item->qty}}
+                                            </td>  
+                                            <td style="font-size: 16px">
+                                                R{{$item->price}}
+                                            </td>                                                 
+                                        </tr>
+                                        @endforeach
+                                    </table>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">                      
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Province</label>
-                                    <input type="text" class="form-control" id="administrative_area_level_1" name="province" disabled="true"/>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Area Code</label>
-                                    <input type="text" id="postal_code" name="post_code" class="form-control" disabled="true">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Country</label>
-                                    <input id="country" type="text" name="country" class="form-control" disabled="true">
-                                    <div class="help-block with-errors"></div>
+                                <div class="col-md-12">
+                                    <div style="text-align: center;">
+                                        <h3>Order Total</h3>
+                                        <h3><span style="color:green;">R {{Cart::instance('default')->subtotal()}}</span></h3>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -696,10 +748,11 @@
                 </div>              
                 <div class="modal-footer">
                     <div class="col-md-12">
-                        <input type="submit" class="btn btn-success btn-send" value="Send message">
+                        <button type="submit" class="btn btn-primary btn-send" style="margin-left:40%!important">Submit</button> 
                     </div>   
                 </div>
             </form>
+            <div id="payfast"></div><br><br>
             <!--End Modal content-->
         </div>
     </div>    
@@ -708,8 +761,37 @@
             $(".s-checkout").click(function () {
                 $("#payModal").modal();
             });
+            $(document).on("submit", "#check-form", function (event) {
+                event.preventDefault();
+                $("#payModal").modal();
+                $('.shop-cart, .delivery').toggle(200);
+                $(".w-100").text("Your Order Details");
+                $(".modal-footer").hide();
+                var data = $(this).serialize();
+                $.ajax({
+                    type: 'post',
+                    url: "{{route('checkout.payment')}}",
+                    data: data,
+                    beforeSend: function () {
+                        //launchpreloader();
+                    },
+                    complete: function () {
+                        //stopPreloader();
+                    },
+                    success: function (result) {
+                        if (result == 'false') {
+                            alert('An error occured, please try again.');
+                            location.reload();
+                        } else {
+                            $("#payfast").html(result);
+                            $("#payfast-pay-form button").css("margin-left", "40%");
+                            $("#payfast-pay-form button").addClass("btn btn-danger");
+                        }
+                    }
+                });
+            });
         });
-        
+
         var placeSearch, autocomplete;
         var componentForm = {
             street_number: 'short_name',
@@ -723,22 +805,27 @@
         function initAutocomplete() {
             // Create the autocomplete object, restricting the search predictions to
             // geographical location types.
-            
+            var input = document.getElementById('autocomplete');
+            var option = {
+                types: ['geocode']
+                        //types: ['(cities)'],
+                        //componentRestrictions: {country: 'fr'}                            
+            }
             autocomplete = new google.maps.places.Autocomplete(
-                    document.getElementById('autocomplete'), {types: ['geocode']});
+                    input, option);
             // Avoid paying for data that you don't need by restricting the set of
             // place fields that are returned to just the address components.
             autocomplete.setFields(['address_component']);
             // When the user selects an address from the drop-down, populate the
             // address fields in the form.
             autocomplete.addListener('place_changed', fillInAddress);
-            
+
         }
 
         function fillInAddress() {
             // Get the place details from the autocomplete object.
             var place = autocomplete.getPlace();
-  
+
             for (var component in componentForm) {
                 document.getElementById(component).value = '';
                 document.getElementById(component).disabled = false;
@@ -747,7 +834,7 @@
             // Get each component of the address from the place details,
             // and then fill-in the corresponding field on the form.
             for (var i = 0; i < place.address_components.length; i++) {
-                var addressType = place.address_components[i].types[0];               
+                var addressType = place.address_components[i].types[0];
                 if (componentForm[addressType]) {
                     var val = place.address_components[i][componentForm[addressType]];
                     document.getElementById(addressType).value = val;
@@ -755,8 +842,8 @@
             }
         }
 
-       // Bias the autocomplete object to the user's geographical location,
-       // as supplied by the browser's 'navigator.geolocation' object.
+        // Bias the autocomplete object to the user's geographical location,
+        // as supplied by the browser's 'navigator.geolocation' object.
         function geolocate() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
@@ -770,132 +857,10 @@
                     });
                     autocomplete.setBounds(circle.getBounds());
                 });
-                
+
             }
         }
 
-        /* Set values + misc */
-        var promoCode;
-        var promoPrice;
-        var fadeTime = 300;
 
-        /* Assign actions */
-        $('.quantity input').change(function () {
-            updateQuantity(this);
-        });
-
-        $('.remove button').click(function () {
-            removeItem(this);
-        });
-
-        $(document).ready(function () {
-            updateSumItems();
-        });
-
-        $('.promo-code-cta').click(function () {
-
-            promoCode = $('#promo-code').val();
-
-            if (promoCode == '10off' || promoCode == '10OFF') {
-                //If promoPrice has no value, set it as 10 for the 10OFF promocode
-                if (!promoPrice) {
-                    promoPrice = 10;
-                } else if (promoCode) {
-                    promoPrice = promoPrice * 1;
-                }
-            } else if (promoCode != '') {
-                alert("Invalid Promo Code");
-                promoPrice = 0;
-            }
-            //If there is a promoPrice that has been set (it means there is a valid promoCode input) show promo
-            if (promoPrice) {
-                $('.summary-promo').removeClass('hide');
-                $('.promo-value').text(promoPrice.toFixed(2));
-                recalculateCart(true);
-            }
-        });
-
-        /* Recalculate cart */
-        function recalculateCart(onlyTotal) {
-            var subtotal = 0;
-
-            /* Sum up row totals */
-            $('.basket-product').each(function () {
-                subtotal += parseFloat($(this).children('.subtotal').text());
-            });
-
-            /* Calculate totals */
-            var total = subtotal;
-            //If there is a valid promoCode, and subtotal < 10 subtract from total
-            var promoPrice = parseFloat($('.promo-value').text());
-            if (promoPrice) {
-                if (subtotal >= 10) {
-                    total -= promoPrice;
-                } else {
-                    alert('Order must be more than £10 for Promo code to apply.');
-                    $('.summary-promo').addClass('hide');
-                }
-            }
-
-            /*If switch for update only total, update only total display*/
-            if (onlyTotal) {
-                /* Update total display */
-                $('.total-value').fadeOut(fadeTime, function () {
-                    $('#basket-total').html(total.toFixed(2));
-                    $('.total-value').fadeIn(fadeTime);
-                });
-            } else {
-                /* Update summary display. */
-                $('.final-value').fadeOut(fadeTime, function () {
-                    $('#basket-subtotal').html(subtotal.toFixed(2));
-                    $('#basket-total').html(total.toFixed(2));
-                    if (total == 0) {
-                        $('.checkout-cta').fadeOut(fadeTime);
-                    } else {
-                        $('.checkout-cta').fadeIn(fadeTime);
-                    }
-                    $('.final-value').fadeIn(fadeTime);
-                });
-            }
-        }
-
-        /* Update quantity */
-        function updateQuantity(quantityInput) {
-            /* Calculate line price */
-            var productRow = $(quantityInput).parent().parent();
-            var price = parseFloat(productRow.children('.price').text());
-            var quantity = $(quantityInput).val();
-            var linePrice = price * quantity;
-            /* Update line price display and recalc cart totals */
-            productRow.children('.subtotal').each(function () {
-                $(this).fadeOut(fadeTime, function () {
-                    $(this).text(linePrice.toFixed(2));
-                    recalculateCart();
-                    $(this).fadeIn(fadeTime);
-                });
-            });
-
-            productRow.find('.item-quantity').text(quantity);
-            updateSumItems();
-        }
-
-        function updateSumItems() {
-            var sumItems = 0;
-            $('.quantity input').each(function () {
-                sumItems += parseInt($(this).val());
-            });
-            $('.total-items').text(sumItems);
-        }
-
-        /* Remove item from cart */
-        function removeItem(removeButton) {
-            /* Remove row from DOM and recalc cart total */
-            var productRow = $(removeButton).parent().parent();
-            productRow.slideUp(fadeTime, function () {
-                productRow.remove();
-                recalculateCart();
-                updateSumItems();
-            });
-        }
     </script>  
     @endsection

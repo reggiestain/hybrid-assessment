@@ -117,7 +117,7 @@
                             @if(Auth::user())
                             <li class="account" style="background: #fff !important;">
                                 <a href="#" style="padding: 0px !important;width:150px;margin-right: 20px;text-transform: none;">
-                                   Hi {{ Auth::user()->firstname}} !
+                                   Hi {{Auth::user()->firstname}} !
                                 <i class="fa fa-angle-down"></i>
                                 </a>
                                 <ul class="account_selection">
