@@ -16,6 +16,7 @@ class PagesController extends Controller {
         if (!Auth::check()) {
             return redirect('/');
         }
+        
     }
 
     /**
@@ -27,6 +28,16 @@ class PagesController extends Controller {
         $products = Product::all();
         $categories = ProductCategory::all();
         return view('pages.home', ['products' => $products, 'categories' => $categories]);
+    }
+    
+    /**
+     * Contact view
+     *  
+     * @return mixed
+     */
+    public function contact() {
+        
+        return view('pages.contact');
     }
     /**
      * Home view

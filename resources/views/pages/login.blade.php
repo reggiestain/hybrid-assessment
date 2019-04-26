@@ -72,7 +72,7 @@
                         </div>
                         <!--<div class="spacing"><a href="#"><small> Forgot Password?</small></a><br/></div>-->
                         <!--<div class="spacing"><input type="checkbox" name="checkboxes" id="checkboxes-0" value="1"><small> Remember me</small></div>-->
-                        @captcha
+                        <!--@captcha-->
                         <div class="form-group">
                             <button type="submit" class="btn btn-success" style="width:100%">Login</button>
                         </div>

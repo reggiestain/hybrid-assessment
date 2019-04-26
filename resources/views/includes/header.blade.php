@@ -8,6 +8,9 @@
   font-size: 17px;
   //margin-top: 20px;
 }
+ul a{
+font-weight: bold;    
+}
 
 /* Change the color of links on hover */
 .topnav a:hover {
@@ -91,10 +94,12 @@
                         <ul class="navbar_menu" id="myTopnav">  
                             @if(Auth::user())
                             <li><a href="{{ route('home') }}" style="margin-right: 200px">home</a></li>
+                            <li><a href="{{ route('contact') }}">Contact Us</a></li>
                             @else
                             <li><a href="{{ route('home') }}" style="margin-right: 200px">home</a></li>
                             <li><a href="{{ route('login') }}" >Sign In</a> </li>
                             <li><a href="{{ route('register') }}">Register</a></li>  
+                            <li><a href="{{ route('contact') }}">Contact Us</a></li>  
                             @endif
                         </ul>
                         
@@ -151,7 +156,8 @@
                                 </a>
                                 <ul class="account_selection">
                                     <li><a href="{{route('account')}}"><span><img class="user-avatar rounded-circle mr-2" src="{{URL::asset('public/images/profile.png')}}" style="width:50px;height:50px" alt="User Avatar"></span></a></li>
-                                    <li><a href="{{route('logout')}}"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>                                   
+                                    <li><a href="{{route('logout')}}"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+                                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
                                 </ul>
                             </li>                            
                             @else
@@ -163,6 +169,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
                                 </li>
                                 @endif
                             </ul>

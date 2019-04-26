@@ -13,13 +13,7 @@
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
     }
 
-    body {
-        background-color: #fff;
-        color: #666;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 62.5%;
-        margin: 0 auto;
-    }
+    
     form{
         display: inline !important;
         margin-left: 10px;
@@ -417,12 +411,21 @@
         main{
             margin-top: 200px;
         } 
+        #payfast{
+            margin-left: 320px;
+        }
     }
     @media only screen and (max-width: 600px) {
 
         main{
             margin-top: 80px !important;
         } 
+        #payfast-pay-form button{
+            margin-left: 30%;
+        }
+        #payfast{
+            margin-left: 0px;
+        }
 
     }
     .productbox {
@@ -554,8 +557,12 @@
                 <div class="total-value final-value" id="basket-total">{{Cart::subtotal()}}</div>
             </div>
             <div class="summary-checkout">
+                @if(Auth::user())
+                <button class="btn btn-success checkout-cta s-checkout"><a href="#" style="color:#fff">Checkout</a></button>
+                @else
                 <button class="btn btn-success checkout-cta"><a href="{{route('login')}}" style="color:#fff">Sign in to Checkout</a></button><br>
                 <button class="btn btn-default checkout-cta s-checkout"><a href="#" style="color:#fff">Checkout as Guest</a></button>
+                @endif
             </div>
         </div>
     </aside>       
@@ -752,7 +759,11 @@
                     </div>   
                 </div>
             </form>
-            <div id="payfast"></div><br><br>
+            <div  class="col-lg-10 col-sm-10 col-xs-10">
+                <div id="payfast">
+                    
+                </div><br><br>
+            </div>
             <!--End Modal content-->
         </div>
     </div>    
@@ -784,8 +795,9 @@
                             location.reload();
                         } else {
                             $("#payfast").html(result);
-                            $("#payfast-pay-form button").css("margin-left", "40%");
-                            $("#payfast-pay-form button").addClass("btn btn-danger");
+                            //$("#payfast-pay-form button").css("width", "50%");
+                            //$("#payfast").css("margin-left", "30px");
+                            $("#payfast-pay-form button").addClass("btn btn-primary");
                         }
                     }
                 });

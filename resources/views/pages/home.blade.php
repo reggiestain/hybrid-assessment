@@ -149,8 +149,12 @@
                                     @if($product->price > App\Http\Controllers\Auth\ProductController::Discount($product->price,$product->discount)) <span>R {{ $product->price }} </span> @else  @endif</div>
                             </div>
                         </div>
-                        <div class="red_button add_to_cart_button"><a href="{{route('options',$product->id)}}">More Options</a></div>
+                        <div class="red_button add_to_cart_button">
+                        <a href="{{route('options',$product->id)}}">More Options</a>
+                        </div>
+                        
                     </div>
+                   
                     @endforeach
                 </div>
             </div>

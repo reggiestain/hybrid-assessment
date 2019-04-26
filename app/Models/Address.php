@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use App\Models\Adress;
+use App\Models\Order;
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class Address extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -13,10 +13,8 @@ class Order extends Model
      * @var array
      */
     protected $fillable = [
-        'street_name', 'street_number', 'city','post_code','province','country',
+       'user_id','street_name', 'street_number','city','post_code','province','country',
     ];
     
-    public function user() {
-        return $this->hasMany('App\Modes\Order');
-    }
+    
 }

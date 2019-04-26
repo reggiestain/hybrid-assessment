@@ -29,24 +29,28 @@ class CheckoutController extends Controller {
         //$address = "$strNum $strNam<br>$province<br>$postCode<br>$ctry";
         if (!Auth::check()) {
             if (empty($strNam)) {
-                $address = "$strNum $strNam<br>$province<br>$postCode<br>$ctry";
+                $address = $request->input('address');                
             }
-            $address = $request->input('address');
+            $address = "$strNum $strNam<br>$province<br>$postCode<br>$ctry";
             $userId = 0;
         } else {
             if (empty($strNam)) {
-                $address = "$strNum $strNam<br>$province<br>$postCode<br>$ctry";
+                $address = $request->input('address');                
+            } else {
+               $address = "$strNum $strNam<br>$province<br>$postCode<br>$ctry"; 
             }
-            $address = $request->input('address');
+            
+           
             $userId = Auth::user()->id;
-            Address::create([
+            $address =Address::create([
                 'user_id' => $userId,
-                'street_number' => $request->input('street_number'),
-                'street_name' => 'cart',
-                'province' => $request->input('street_name'),
-                'post_code' => $request->input('post_code'),
-                'country' => $request->input('country')
+                'street_number' => $strNum,
+                'street_name' => $strNam,
+                'province' => $province,
+                'post_code' => $postCode,
+                'country' => $ctry
             ]);
+            
         }
 
         $order = Order::create([
