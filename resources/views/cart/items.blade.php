@@ -499,7 +499,7 @@
                 </div>
                 <div class="product-details">
                     <h1><strong><span class="item-quantity">4</span> {{$item->name}}</strong> </h1>
-                    <p><strong>Navy, Size 18</strong></p>
+                    <p><strong>Size {{$item->options->size}}</strong></p>
                     <p>Product Code - 00{{$item->id}}</p>
                 </div>
             </div>

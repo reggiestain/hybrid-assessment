@@ -115,6 +115,7 @@ class ComposerStaticInit6760d3a07091f185474a6bccebe06243
         ),
         'J' => 
         array (
+            'Jrean\\UserVerification\\' => 23,
             'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
             'JakubOnderka\\PhpConsoleColor\\' => 29,
         ),
@@ -340,6 +341,10 @@ class ComposerStaticInit6760d3a07091f185474a6bccebe06243
         array (
             0 => __DIR__ . '/..' . '/laravel/socialite/src',
         ),
+        'Jrean\\UserVerification\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jrean/laravel-user-verification/src',
+        ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
             0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
@@ -487,11 +492,13 @@ class ComposerStaticInit6760d3a07091f185474a6bccebe06243
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\TransactionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/TransactionController.php',
+        'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Front\\CartController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/CartController.php',
         'App\\Http\\Controllers\\Front\\CheckoutController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/CheckoutController.php',
         'App\\Http\\Controllers\\Front\\PagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/PagesController.php',
         'App\\Http\\Controllers\\Front\\SaveForLaterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Front/SaveForLaterController.php',
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Admin' => __DIR__ . '/../..' . '/app/Http/Middleware/Admin.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -502,6 +509,7 @@ class ComposerStaticInit6760d3a07091f185474a6bccebe06243
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\AccountBalance' => __DIR__ . '/../..' . '/app/Models/AccountBalance.php',
         'App\\Models\\ActivationKey' => __DIR__ . '/../..' . '/app/Models/ActicationKey.php',
+        'App\\Models\\Address' => __DIR__ . '/../..' . '/app/Models/Address.php',
         'App\\Models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
         'App\\Models\\PasswordReset' => __DIR__ . '/../..' . '/app/Models/PasswordReset.php',
         'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
@@ -2071,6 +2079,22 @@ class ComposerStaticInit6760d3a07091f185474a6bccebe06243
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
+        'Jrean\\UserVerification\\Events\\UserVerified' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Events/UserVerified.php',
+        'Jrean\\UserVerification\\Events\\VerificationEmailSent' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Events/VerificationEmailSent.php',
+        'Jrean\\UserVerification\\Exceptions\\ModelNotCompliantException' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Exceptions/ModelNotCompliantException.php',
+        'Jrean\\UserVerification\\Exceptions\\TokenMismatchException' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Exceptions/TokenMismatchException.php',
+        'Jrean\\UserVerification\\Exceptions\\UserHasNoEmailException' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Exceptions/UserHasNoEmailException.php',
+        'Jrean\\UserVerification\\Exceptions\\UserIsVerifiedException' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Exceptions/UserIsVerifiedException.php',
+        'Jrean\\UserVerification\\Exceptions\\UserNotFoundException' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Exceptions/UserNotFoundException.php',
+        'Jrean\\UserVerification\\Exceptions\\UserNotVerifiedException' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Exceptions/UserNotVerifiedException.php',
+        'Jrean\\UserVerification\\Facades\\UserVerification' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Facades/UserVerification.php',
+        'Jrean\\UserVerification\\Mail\\VerificationTokenGenerated' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Mail/VerificationTokenGenerated.php',
+        'Jrean\\UserVerification\\Middleware\\IsVerified' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Middleware/IsVerified.php',
+        'Jrean\\UserVerification\\Traits\\RedirectsUsers' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Traits/RedirectsUsers.php',
+        'Jrean\\UserVerification\\Traits\\UserVerification' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Traits/UserVerification.php',
+        'Jrean\\UserVerification\\Traits\\VerifiesUsers' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/Traits/VerifiesUsers.php',
+        'Jrean\\UserVerification\\UserVerification' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/UserVerification.php',
+        'Jrean\\UserVerification\\UserVerificationServiceProvider' => __DIR__ . '/..' . '/jrean/laravel-user-verification/src/UserVerificationServiceProvider.php',
         'JsonSerializable' => __DIR__ . '/..' . '/nesbot/carbon/src/JsonSerializable.php',
         'Laravel\\Socialite\\AbstractUser' => __DIR__ . '/..' . '/laravel/socialite/src/AbstractUser.php',
         'Laravel\\Socialite\\Contracts\\Factory' => __DIR__ . '/..' . '/laravel/socialite/src/Contracts/Factory.php',

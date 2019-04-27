@@ -168,7 +168,9 @@ return [
          * Package Service Providers...
          */
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
-        AlbertCht\InvisibleReCaptcha\InvisibleReCaptchaServiceProvider::class,       
+        AlbertCht\InvisibleReCaptcha\InvisibleReCaptchaServiceProvider::class, 
+        Jrean\UserVerification\UserVerificationServiceProvider::class,
+        'Billow\PayfastServiceProvider',
 
         /*
          * Application Service Providers...
@@ -180,7 +182,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Telegram\Bot\Laravel\TelegramServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        'Billow\PayfastServiceProvider',
+        
 
     ],
 
@@ -234,6 +236,7 @@ return [
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
 
     ],
 

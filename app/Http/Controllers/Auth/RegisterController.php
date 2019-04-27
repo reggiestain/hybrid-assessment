@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Auth\Events\Registered;
+use Jrean\UserVerification\Traits\VerifiesUsers;
+use Jrean\UserVerification\Facades\UserVerification;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller {
     /*
@@ -24,6 +28,8 @@ class RegisterController extends Controller {
 
 use RegistersUsers;
 
+use VerifiesUsers;
+
     /**
      * Where to redirect users after registration.
      *
@@ -38,6 +44,7 @@ use RegistersUsers;
      */
     public function __construct() {
         //$this->middleware('guest');
+        //$this->middleware('guest', ['except' => ['getVerification', 'getVerificationError']]);
     }
 
     /**
@@ -65,17 +72,17 @@ use RegistersUsers;
      * @return \App\User
      */
     protected function create(array $data) {
-        
+
         $user = User::create([
                 //'username' => $data['username'],
                 'firstname' => $data['firstname'],
                 'surname' => $data['surname'],
                 'email' => $data['email'],
                 'password' => bcrypt($data['password']),
-                'user_group_id'=>2
+                'user_group_id' => 2
         ]);
-        
-        
+
+
 
         return $user;
     }
@@ -89,7 +96,7 @@ use RegistersUsers;
     public function register(Request $request) {
 
         $validator = $this->validator($request->all());
-        
+
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator)->withInput();
         }
@@ -98,7 +105,20 @@ use RegistersUsers;
         // process the activation email for the user
         //$this->queueActivationKeyNotification($user);
         // we do not want to login the new user
+        event(new Registered($user));
+
+        $this->guard()->login($user);
+        UserVerification::generate($user);
+
+        UserVerification::send($user, 'My Custom E-mail Subject');
+
         return redirect('/login')->with('success', 'Registration successful,please login with your email and password');
     }
-
+    
+    public function resendToken(){
+         $user = Auth::user();
+         UserVerification::generate($user);
+         UserVerification::send($user, 'Resend Token');
+         return back();
+    }
 }

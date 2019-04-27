@@ -115,8 +115,8 @@
                             <div class="swatches">
                                 <div class="swatch clearfix" data-option-index="0">
                                     <div class="hader">Size</div>
-                                    <div data-value="M" class="swatch-element plain m available">
-                                        <input id="swatch-0-m" type="radio" name="option-0" value="M" checked  />
+                                    <div data-value="M" class="swatch-element plain m available check">
+                                        <input id="swatch-0-m" type="radio" name="option-0" value="M"/>
                                         <label for="swatch-0-m">
                                             M
                                             <img class="crossed-out" src="//cdn.shopify.com/s/files/1/1047/6452/t/1/assets/soldout.png?10994296540668815886" />
@@ -174,38 +174,7 @@
                                 <div class="guide">
                                     <a>Size guide</a>
                                 </div>-->
-                            </div>
-                            <!-- <form method="post" enctype="multipart/form-data" id="AddToCartForm"> -->
-                            <form id="AddToCartForm">
-                                <select name="id" id="productSelect" quickbeam="product" class="product-single__variants">
-                                    <option  selected="selected"  data-sku="" value="7924994501">
-                                        M / Blue - $800.00 USD
-                                    </option>
-                                    <option  data-sku="" value="7924995077">
-                                        M / Red - $850.00 USD
-                                    </option>
-                                    <option  data-sku="" value="7924994437">
-                                        L / Blue - $850.00 USD
-                                    </option>
-                                    <option  data-sku="" value="7924994693">
-                                        L / Yellow - $850.00 USD
-                                    </option>
-                                    <option  data-sku="" value="7924995013">
-                                        L / Red - $850.00 USD
-                                    </option>
-                                    <option  data-sku="" value="7924994373">
-                                        XL / Blue - $900.00 USD
-                                    </option>
-                                    <option  data-sku="" value="7924994629">
-                                        XL / Yellow - $850.00 USD
-                                    </option>
-                                    <option  data-sku="" value="7924830021">
-                                        XXL / Blue - $950.00 USD
-                                    </option>
-                                    <option  data-sku="" value="7924994885">
-                                        XXL / Red - $850.00 USD
-                                    </option>
-                                </select>
+                            </div>                           
                                 <div class="btn-and-quantity-wrap">
                                     <div class="btn-and-quantity">
                                         <div class="row" style="margin-left:5px">
@@ -219,7 +188,7 @@
                                                 <button class="btn btn-primary buy-now"> Buy It Now</button>
                                             </div>   
                                             <div class="bops" style="margin-left:10px">
-                                                <input type="button" onclick="location.href ='{{route('cart.add',$product->id)}}'" class="btn btn-danger" value="Add to cart">
+                                                <input type="submit" class="btn btn-danger to-cart" id="{{$product->id}}" value="Add to cart">
                                             </div>
                                         </div>  
                                     </div>
@@ -227,8 +196,8 @@
                             </form>
                             <div class="tabs">
                                 <div class="tab-labels">
-                                    <span data-id="1" class="active">Info</span>
-                                    <span data-id="2">Brand</span>
+                                    <span id="1" data-id="1" class="active">Info</span>
+                                    <span id="2" data-id="2" class="">Brand</span>
                                 </div>
                                 <div class="tab-slides">
                                     <div id="tab-slide-1" itemprop="description"  class="slide active">
@@ -243,7 +212,7 @@
                                         <div><label>Returns: 30 day returns. Buyer pays for return shipping |</label></div>
                                     </div>
                                     <div id="tab-slide-2" class="slide">
-                                        Tony Hunfinger
+                                        <b> David Madanga</b>
                                     </div>
                                 </div>
                             </div>
@@ -344,8 +313,46 @@
         </span>
     </a>
 </div>
-
 <!-- Quickbeam cart end -->
-<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='//raw.githubusercontent.com/greenwoodents/quickbeam.js/master/dist/quickbeam.min.js'></script><script src='//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js'></script>
 
+<script>
+$(document).ready(function () {
+    $("span").click(function(){
+        var num = $(this).attr("data-id");
+        var status = $(this).attr("class");
+        var ch = 0;
+        if(num==1){
+           ch = 2; 
+        }else{
+           ch = 1;
+        }
+        if(status=='active'){
+          $("#"+ch).removeClass('active')
+          $(this).addClass('active')
+          $("#tab-slide-"+ch).removeClass('active');
+          $("#tab-slide-"+num).addClass('active');
+        }else{
+          $("#"+ch).removeClass('active')
+          $(this).addClass('active') 
+          $("#tab-slide-"+ch).removeClass('active');
+          $("#tab-slide-"+num).addClass('active');
+        }        
+    });
+    
+    $(".swatch-element").click(function(){
+        $(".swatch-element").removeClass('check')
+        $(this).addClass('check')
+    });
+    
+    $(".to-cart").click(function(){
+        var id = $(this).attr("id");
+        $(this).addClass('check');
+        var size = $(".check").text();        
+        window.location.href = "/cart/add/"+id+"/"+size;
+        
+    });
+    
+    
+});
+</script>
 @endsection

@@ -16,8 +16,6 @@ class CartController extends Controller {
      */
     public function index() {
         $cartItems = Cart::content();
-        //dd($cartItems);
-
         return view('cart.items', compact('cartItems'));
     }
 
@@ -70,9 +68,11 @@ class CartController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function add($id) {
+    public function add($id,$size) {
         $product = Product::find($id);
-
+        if(empty($size)){
+           $size='M'; 
+        }
         $duplicates = Cart::search(function ($cartItem, $rowId) use ($id) {
             return $cartItem->id === $id;
         });
@@ -80,7 +80,7 @@ class CartController extends Controller {
         if($duplicates->isNotEmpty()){
            return redirect()->route('options',$id)->with('success','Item is already in your cart.') ;
         }
-        Cart::add($id, $product->name, 1, $product->price, ['image' => $product->mime_type]);
+        Cart::add($id, $product->name, 1, $product->price, ['image' => $product->mime_type,'size'=>$size]);
 
         return redirect('/cart');
     }
@@ -111,7 +111,7 @@ class CartController extends Controller {
      */
     public function update(Request $request, $id) {
         Cart::update($id, $request->qty);
-        return back()->with('success','Item has been deleted.');
+        return back()->with('success','Item quantity has been updated.');
     }
 
     /**

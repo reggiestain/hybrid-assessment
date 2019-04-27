@@ -25,7 +25,7 @@
         background-color: #fff;
         color: #666;
         font-family: 'Open Sans', sans-serif;
-        font-size: 62.5%;
+        font-size: 80.5%;
         margin: 0 auto;
     }    
         </style>
