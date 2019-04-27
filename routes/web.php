@@ -59,7 +59,7 @@ Route::group(['prefix' => 'guest', 'middleware' => ['auth', 'guest']], function(
     Route::get('/profile', ['as' => 'account', 'uses' => 'Auth\PagesController@profile']);
 });
 Route::resource('/cart/item', 'Front\CartController');
-// Password Reset Routes...
+//Password Reset Routes...
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');

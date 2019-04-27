@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
-namespace App\Http\Controllers\Auth;
  
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
@@ -23,7 +21,8 @@ class ResetPasswordController extends Controller
     */
  
     use ResetsPasswords;
-     
+    
+    public $token;
     /**
      * Where to redirect users after login.
      *
@@ -36,11 +35,13 @@ class ResetPasswordController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($token)
     {
-        $this->middleware('guest');
+        //$this->middleware('guest');
+        $this->token = $token;
     }
-     
+    
+    
     /**
      * Get the response for a successful password reset.
      *

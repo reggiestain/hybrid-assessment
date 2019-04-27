@@ -48,7 +48,7 @@
     
     <div class="panel-body">
         <div class="row">
-            <div class="col-lg-5 col-sm-5 col-xs-6" style="border-right:1px solid #ccc;height:160px;" id="log-con">
+            <div class="col-lg-5 col-sm-5 col-xs-6" style="border-right:1px solid #ccc;" id="log-con">
                 @if ($message = Session::get('success'))
                 <div class="alert alert-success">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -72,9 +72,10 @@
                         </div>
                         <!--<div class="spacing"><a href="#"><small> Forgot Password?</small></a><br/></div>-->
                         <!--<div class="spacing"><input type="checkbox" name="checkboxes" id="checkboxes-0" value="1"><small> Remember me</small></div>-->
-                        <!--@captcha-->
+                        @captcha
                         <div class="form-group">
                             <button type="submit" class="btn btn-success" style="width:100%">Login</button>
+                            <a class="pull-right" href="{{route('password.request')}}"><span class="fa fa-lock"></span> Forgot password?</a>
                         </div>
                     </fieldset>
                 </form>
