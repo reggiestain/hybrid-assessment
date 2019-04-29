@@ -1,6 +1,13 @@
 @extends('layouts.app')
-
 @section('content')
+<style>
+@media screen and (max-width: 600px) {
+      
+        .container{
+            margin-top: 120px !important;
+        }
+    }    
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -10,7 +17,7 @@
                 <div class="card-body">
                     @if (session('resent'))
                         <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
+                            {{ __('A  j fresh verification link has been sent to your email address.') }}
                         </div>
                     @endif
 

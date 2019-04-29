@@ -6,13 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\User;
  
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\sendsPasswordResetEmails;
+use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Support\Facades\Validator;
 use App\Notifications\UsernameReminderNotification;
  
 class ForgotPasswordController extends Controller
 {
-    use sendsPasswordResetEmails;
+    use SendsPasswordResetEmails;
     /**
      * Create a new controller instance.
      *

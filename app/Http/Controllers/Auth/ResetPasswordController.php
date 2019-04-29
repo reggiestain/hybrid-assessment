@@ -28,17 +28,17 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
+    protected $redirectTo = '/';
  
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct($token)
+    public function __construct()
     {
         //$this->middleware('guest');
-        $this->token = $token;
+        //$this->token = $token;
     }
     
     
@@ -55,7 +55,7 @@ class ResetPasswordController extends Controller
  
         //send Activation Key notification
         // TODO: in the future, you may want to queue the mail since sending the mail can slow down the response
-        $user->notify(new PasswordResetConfirmationNotification());
+        //$user->notify(new PasswordResetConfirmationNotification());
          
         return redirect($this->redirectPath())
             ->with('message', 'Your password has been successfully updated.')

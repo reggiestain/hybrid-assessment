@@ -1,7 +1,19 @@
 @extends('layouts.app')
-
 @section('content')
-<div class="container" style="margin-top: 200px">
+<style>
+@media only screen and (max-width: 1600px)
+    {
+        .p-top{
+            margin-top: 200px;
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        .p-top{
+            margin-top: 100px;
+        }
+    }
+</style>
+<div class="container p-top">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
