@@ -54,7 +54,40 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-xs-12 py-0 px-1 d-none d-lg-block">
+        <div class="col-lg-6 col-xs-12 py-0 pl-3 pr-1 featcard">
+            <div id="featured" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">			  
+                        <div class="card bg-dark text-white">
+                            <img class="card-img img-fluid" src="public/images/banner/banner-1.jpg" alt="">
+                            <div class="card-img-overlay d-flex linkfeat">
+                                <!-- <a href="#" class="align-self-end">
+                                   <span class="badge">Ekspor</span> 
+                                   <h4 class="card-title">Review GSP: Amerika Ingin Perdagangan Saling Menguntungkan</h4>
+                                   <p class="textfeat" style="display: none;">makro.id – Duta Besar Amerika Serikat untuk Indonesia Joseph R. Donovan menegaskan, langkah pemerintah Amerika Serikat meninjau ulang pemberian Generalized System od Preferenes (GSP) akan menguntungkan kedua belah pihak.
+                                   Menurut Donovan,</p>
+                                 </a>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">			  
+                        <div class="card bg-dark text-white">
+                            <img class="card-img img-fluid" src="public/images/banner/banner-2.jpg" alt="">
+                            <div class="card-img-overlay d-flex linkfeat">
+                                <!-- <a href="http://makro.id/dpr-setujui-penambahan-anggaran-bp-batam-rp565-miliar" class="align-self-end">
+                                   <!--<span class="badge">Pertumbuhan Ekonomi</span> 
+                                   <h4 class="card-title">DPR Setujui Penambahan Anggaran BP Batam Rp565 Miliar</h4>
+                                   <p class="textfeat" style="display: none;">makro.id - Dewan Perwakilan Rakyat (DPR) menyetujui penambahan anggaran Badan Pengusahaan (BP) Batam Rp565 miliar. Dengan penambahan anggaran di tahun 2019 tersebut diharapkan dapat mendorong percepatan pembangunan Kota Batam.
+               
+               Anggota Komisi</p>
+                                 </a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col-sm-6 col-xs-12 py-0 px-1 d-none d-lg-block">
             <div class="row">
                 <div class="col-sm-6 col-xs-12 pb-2 mg-1">
                     <div class="card bg-dark text-white">
@@ -63,7 +96,7 @@
                             <!-- <a href="http://makro.id/bi-atur-standarisasi-qr-code" class="align-self-end">
                                <span class="badge">Finansial</span> 
                                <h6 class="card-title">BI Atur Standarisasi QR Code</h6>
-                             </a>-->
+                             </a>
                         </div>
                     </div>
                 </div>
@@ -74,7 +107,7 @@
                             <!--<a href="http://makro.id/ptsp-bp-batam-masuk-10-terbaik-di-indonesia" class="align-self-end">
                               <span class="badge">Industri</span> 
                               <h6 class="card-title">PTSP BP Batam Masuk 10 Terbaik di Indonesia</h6>
-                            </a>-->
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -85,7 +118,7 @@
                             <!--<a href="http://makro.id/review-gsp-amerika-ingin-perdagangan-saling-menguntungkan" class="align-self-end">
                               <span class="badge">Ekspor</span> 
                               <h6 class="card-title">Review GSP: Amerika Ingin Perdagangan Saling Menguntungkan</h6>
-                            </a>-->
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -101,7 +134,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div> 
 </div> 
 <!-- Banner -->

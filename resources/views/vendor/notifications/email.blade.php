@@ -1,34 +1,62 @@
-@extends('layouts.email')
-@section('content')
-<td align="left" style="color: #888888; font-size: 16px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 24px;">
-    <!-- section text ======-->
+@component('mail::message')
+{{-- Greeting --}}
+@if (! empty($greeting))
+# {{ $greeting }}
+@else
+@if ($level === 'error')
+# @lang('Whoops!')
+@else
+# @lang('Hello!')
+@endif
+@endif
 
-    <p style="line-height: 24px; margin-bottom:15px;">
+{{-- Intro Lines --}}
+@foreach ($introLines as $line)
+{{ $line }}
 
-        Hi {{ Auth::user()->firstname}},
+@endforeach
 
-    </p>
-    <p style="line-height: 24px;margin-bottom:15px;">
-        {{-- Intro Lines --}}
-        @foreach ($introLines as $line)
-        {{ $line }}
+{{-- Action Button --}}
+@isset($actionText)
+<?php
+    switch ($level) {
+        case 'success':
+        case 'error':
+            $color = $level;
+            break;
+        default:
+            $color = 'primary';
+    }
+?>
+@component('mail::button', ['url' => $actionUrl, 'color' => $color])
+{{ $actionText }}
+@endcomponent
+@endisset
 
-        @endforeach
+{{-- Outro Lines --}}
+@foreach ($outroLines as $line)
+{{ $line }}
 
-        {{-- Action Button --}}
-        @isset($actionText)
-        <?php
-        switch ($level) {
-            case 'success':
-            case 'error':
-                $color = $level;
-                break;
-            default:
-                $color = 'primary';
-        }
-        ?>
-        @endisset
-    </p>
+@endforeach
 
-</td>
-@endsection
+{{-- Salutation --}}
+@if (! empty($salutation))
+{{ $salutation }}
+@else
+@lang('Regards'),<br>OKHELA MEDIA Team
+@endif
+
+{{-- Subcopy --}}
+@isset($actionText)
+@component('mail::subcopy')
+@lang(
+    "If you’re having trouble clicking the \":actionText\" button, copy and paste the URL below\n".
+    'into your web browser: [:actionURL](:actionURL)',
+    [
+        'actionText' => $actionText,
+        'actionURL' => $actionUrl,
+    ]
+)
+@endcomponent
+@endisset
+@endcomponent

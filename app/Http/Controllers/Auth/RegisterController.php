@@ -56,7 +56,7 @@ use VerifiesUsers;
     protected function validator(array $data) {
         return Validator::make($data, [
                 //'username' => 'required|string|unique:users',
-                //'g-recaptcha-response' => 'required|captcha',
+                'g-recaptcha-response' => 'required|captcha',
                 'firstname' => 'required',
                 'surname' => 'required',
                 'email' => 'required|string|unique:users',
@@ -110,7 +110,7 @@ use VerifiesUsers;
         $this->guard()->login($user);
         UserVerification::generate($user);
 
-        UserVerification::send($user, 'My Custom E-mail Subject');
+        UserVerification::send($user, 'Verify Email Address');
 
         return redirect('/login')->with('success', 'Registration successful,please login with your email and password');
     }

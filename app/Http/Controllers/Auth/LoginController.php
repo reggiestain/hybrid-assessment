@@ -28,7 +28,7 @@ class LoginController extends Controller {
     }
     
     public function login(Request $request) {
-        /*
+        
         $validator = Validator::make($request->all(),[
             'g-recaptcha-response' => 'required|captcha'
         ]);
@@ -36,8 +36,6 @@ class LoginController extends Controller {
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator)->withInput();
         }
-         * 
-         */
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {

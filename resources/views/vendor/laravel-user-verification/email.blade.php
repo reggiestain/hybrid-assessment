@@ -11,6 +11,7 @@
     <p style="line-height: 24px;margin-bottom:15px;">
         Click here to verify your account: <a href="{{ $link = route('email-verification.check', $user->verification_token) . '?email=' . urlencode($user->email) }}">{{ $link }}</a>
     </p>
+    <p>Regards,<br>OKHELA MEDIA Team</p>
 
 </td>
 @endsection

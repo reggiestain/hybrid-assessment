@@ -23,7 +23,7 @@ class VerifyEmail extends Notification
      * @param  mixed  $notifiable
      * @return array|string
      */
-    public function via($notifiable)
+    public functionvia($notifiable)
     {
         return ['mail'];
     }
