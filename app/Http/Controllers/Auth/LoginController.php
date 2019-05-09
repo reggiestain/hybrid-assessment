@@ -63,7 +63,7 @@ class LoginController extends Controller {
         }
 
         $authUser = $this->findOrCreateUser($user, $provider);
-
+        
         Auth::login($authUser, true);
         if (Auth::user()->user_group_id == 2) {
             if (Cart::count() > 0) {
@@ -88,9 +88,10 @@ class LoginController extends Controller {
                 $user = User::create([
                         'email' => $providerUser->getEmail(),
                         'firstname' => $providerUser->getName(),
+                        'user_group_id' => 2
                 ]);
             }
-
+            
             $user->identities()->create([
                 'provider_id' => $providerUser->getId(),
                 'provider_name' => $provider,
