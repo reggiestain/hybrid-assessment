@@ -80,6 +80,7 @@ class CartController extends Controller {
         if($duplicates->isNotEmpty()){
            return redirect()->route('options',$id)->with('success','Item is already in your cart.') ;
         }
+       
         Cart::add($id, $product->name, 1, $product->price, ['image' => $product->mime_type,'size'=>$size]);
 
         return redirect('/cart');

@@ -202,9 +202,7 @@
                         <div class="red_button add_to_cart_button">
                             <a href="{{route('options',$product->id)}}">More Options</a>
                         </div>
-
                     </div>
-
                     @endforeach
                 </div>
             </div>
