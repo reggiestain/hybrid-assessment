@@ -134,7 +134,7 @@ font-weight: bold;
                             <li class="checkout">
                                 <a href="{{ route('cart.index') }}" class="cart-item">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    @if(Cart::instance('default')->count() > 0)
+                                    @if(Cart::count() > 0)
                                     <span id="checkout_items" class="checkout_items">{{ Cart::instance('default')->count() }}</span>
                                     @else
                                     @endif

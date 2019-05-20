@@ -15,7 +15,7 @@ class CartController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $cartItems = Cart::content();
+        $cartItems = Cart::instance('default')->content();
         return view('cart.items', compact('cartItems'));
     }
 
