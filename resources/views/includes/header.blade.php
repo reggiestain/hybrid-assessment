@@ -87,7 +87,7 @@ font-weight: bold;
                     <div class="logo_container">
                         <!--<a href="#">David<span> Madanga</span></a>-->
                         <a class="navbar-brand" href="#">
-                            <img src="{{ URL::asset('public/images/logo_black.png') }}" class="img-responsive" alt="logo" style="width:150px;height:60px">
+                            <img src="{{ URL::asset('images/logo_black.png') }}" class="img-responsive" alt="logo" style="width:150px;height:60px">
                         </a>
                     </div>
                     <nav class="navbar">                       
