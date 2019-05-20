@@ -7,16 +7,16 @@
         <meta name="description" content="David Damanga | Online Store">
         <meta name="keywords" content="African wax print fabric, Men African wear, Women African wear, African Clothings">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/styles/bootstrap4/bootstrap.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/styles/social.css') }}">
-        <link href="{{ asset('css/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/plugins/OwlCarousel2-2.2.1/animate.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/styles/main_styles.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/styles/options.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/styles/responsive.css') }}">
-        <script src="{{ URL::asset('js/jquery-3.2.1.min.js') }}"></script> 
+        <link rel="stylesheet" type="text/css" href="{{ asset('public/css/styles/bootstrap4/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('public/css/styles/social.css') }}">
+        <link href="{{ asset('public/css/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('public/css/plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('public/css/plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('public/css/plugins/OwlCarousel2-2.2.1/animate.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('public/css/styles/main_styles.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('public/css/styles/options.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('public/css/styles/responsive.css') }}">
+        <script src="{{ URL::asset('public/js/jquery-3.2.1.min.js') }}"></script> 
         
     </head>
     <body>
@@ -64,12 +64,12 @@
             <!-- End Footer -->
         </div>
 
-        <script src="{{ URL::asset('js/popper.js') }}"></script>
-        <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
-        <script src="{{ URL::asset('js/plugins/Isotope/isotope.pkgd.min.js') }}"></script>
-        <script src="{{ URL::asset('js/plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
-        <script src="{{ URL::asset('js/plugins/easing/easing.js') }}"></script>
-        <script src="{{ URL::asset('js/custom.js') }}"></script>
+        <script src="{{ URL::asset('public/js/popper.js') }}"></script>
+        <script src="{{ URL::asset('public/js/bootstrap.min.js') }}"></script>
+        <script src="{{ URL::asset('public/js/plugins/Isotope/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ URL::asset('public/js/plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
+        <script src="{{ URL::asset('public/js/plugins/easing/easing.js') }}"></script>
+        <script src="{{ URL::asset('public/js/custom.js') }}"></script>
 
         <script>
 
