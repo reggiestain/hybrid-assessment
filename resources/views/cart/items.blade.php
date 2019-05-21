@@ -365,10 +365,11 @@
         .price,
         .subtotal {
             width: 33%;
+            font-size: 14px;
         }
         .quantity {
             text-align: center;
-            width: 34%;
+            width: 60%;
         }
         .quantity-field {
             float: none;
@@ -508,9 +509,10 @@
                         </select>
                     </p>
                     <p>Product Code - 00{{$item->id}}</p>
+                    <p class="resp-price" style="display:none"><strong>{{$item->price}}</strong></p>
                 </div>
             </div>
-            <div class="price">{{$item->price}}</div>
+            
             <div class="quantity">          
                 {!! Form::open(['route'=>['cart.update',$item->rowId],'method'=>'PUT']) !!}
                 <input type="hidden" name="size" id="{{$item->id}}" value="{{$item->options->size}}">
