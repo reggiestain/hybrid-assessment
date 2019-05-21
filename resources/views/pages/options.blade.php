@@ -185,7 +185,8 @@
                                         </div> <br>
                                         <div class="row" style="margin-left:5px">
                                             <div class="b-option">
-                                                <button class="btn btn-primary buy-now"> Buy It Now</button>
+                                                <!--<button class="btn btn-primary buy-now"> Buy It Now</button>-->
+                                                <input type="submit" class="btn btn-primary to-cart" id="{{$product->id}}" value="Buy It Now">
                                             </div>   
                                             <div class="bops" style="margin-left:10px">
                                                 <input type="submit" class="btn btn-danger to-cart" id="{{$product->id}}" value="Add to cart">
