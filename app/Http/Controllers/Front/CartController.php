@@ -36,7 +36,6 @@ class CartController extends Controller {
      */
     public function store($id) {
         
-        
     }
 
     /**
@@ -68,24 +67,24 @@ class CartController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function add($id,$size) {
+    public function add($id, $size) {
         $product = Product::find($id);
-        if(empty($size)){
-           $size='M'; 
+        if (empty($size)) {
+            $size = 'M';
         }
         $duplicates = Cart::search(function ($cartItem, $rowId) use ($id) {
-            return $cartItem->id === $id;
-        });
-      
-        if($duplicates->isNotEmpty()){
-           return redirect()->route('options',$id)->with('success','Item is already in your cart.') ;
+                return $cartItem->id === $id;
+            });
+
+        if ($duplicates->isNotEmpty()) {
+            return redirect()->route('options', $id)->with('success', 'Item is already in your cart.');
         }
-       
-        Cart::add($id, $product->name, 1, $product->price, ['image' => $product->mime_type,'size'=>$size]);
+
+        Cart::add($id, $product->name, 1, $product->price, ['image' => $product->mime_type, 'size' => $size]);
 
         return redirect('/cart');
     }
-    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -93,14 +92,13 @@ class CartController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function SwitchTosaveForLater($id) {
-        
-        $product = Cart::get($id);
-                   Cart::remove($id);
-        Cart::instance('saveForLater')->add($id, $product->name, 1, $product->price, 
-                      ['image' => $product->options->image])->associate('App\Models\Product');
 
-        return redirect('cart')->with('success','Item has been saved for later.') ;
-;
+        $product = Cart::get($id);
+        Cart::remove($id);
+        Cart::instance('saveForLater')->add($id, $product->name, 1, $product->price, ['image' => $product->options->image])->associate('App\Models\Product');
+
+        return redirect('cart')->with('success', 'Item has been saved for later.');
+        ;
     }
 
     /**
@@ -111,8 +109,9 @@ class CartController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        Cart::update($id, $request->qty);
-        return back()->with('success','Item quantity has been updated.');
+        Cart::update($id, [$request->qty, 'options' => ['image' => $request->image, 'size' => $request->size]]);
+
+        return back()->with('success', 'Item quantity has been updated.');
     }
 
     /**
@@ -125,14 +124,14 @@ class CartController extends Controller {
         Cart::remove($id);
         return back();
     }
-    
+
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function checkout() {        
+    public function checkout() {
         return view('cart.checkout');
     }
 

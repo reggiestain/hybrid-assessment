@@ -73,7 +73,7 @@
                     <div class="left-col">
                         <div class="thumbs">
                             @foreach($side as $sides)
-                            <a class="thumb-image active" href="{{ URL::asset($sides->mime_type)}}?v=1446769025" data-index="0">
+                            <a class="thumb-image active" href="{{route('options',$sides->id)}}">
                                 <span><img src="{{URL::asset($sides->mime_type)}}?v=1446769025" alt="{{$sides->name}}"></span>
                             </a>
                             @endforeach
@@ -229,8 +229,8 @@
                 <h2>You might also like</h2>
                 <div class="collection-list cols-4" id="collection-list" data-products-per-page="4">
                     @foreach($side as $likes)
-                    <a class="product-box">
-                        <span class="img">
+                    <a href="{{route('options',$likes->id)}}" class="product-box">
+                        <span class="img">                            
                             <span style="background-image: url('{{asset($likes->mime_type)}}?v=1447530130')" class="i first"></span>
                             <span class="i second" style="background-image: url('{{asset($likes->mime_type)}}?v=1447530130')"></span>
                         </span>
@@ -290,7 +290,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="form-group" style="margin-left:90px">
+                <div class="form-group" style="margin-left:90px">                    
                     <img src="{{URL::asset($product->mime_type)}}" style="width:100px;height:100px" class="img-responsive" alt="Cinque Terre">
                 </div>
                 <div class="form-group">

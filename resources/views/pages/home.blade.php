@@ -188,7 +188,9 @@
                     <div class="product-item {{$product->product_category_id}}">
                         <div class="product discount product_filter">
                             <div class="product_image">
+                                <a href="{{route('options',$product->id)}}">
                                 <img src="{{ $product->mime_type }}" alt="">
+                                </a>
                             </div>
                             <div class="favorite favorite_left"></div>
 

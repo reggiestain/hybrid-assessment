@@ -13,7 +13,7 @@
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
     }
 
-    
+
     form{
         display: inline !important;
         margin-left: 10px;
@@ -499,13 +499,22 @@
                 </div>
                 <div class="product-details">
                     <h1><strong><span class="item-quantity">4</span> {{$item->name}}</strong> </h1>
-                    <p><strong>Size {{$item->options->size}}</strong></p>
+                    <p><strong>Size</strong>
+                        <select id="size" var="{{$item->id}}">
+                            <option value="{{$item->options->size}}" selected>{{$item->options->size}}</option> 
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </p>
                     <p>Product Code - 00{{$item->id}}</p>
                 </div>
             </div>
             <div class="price">{{$item->price}}</div>
             <div class="quantity">          
                 {!! Form::open(['route'=>['cart.update',$item->rowId],'method'=>'PUT']) !!}
+                <input type="hidden" name="size" id="{{$item->id}}" value="{{$item->options->size}}">
+                <input type="hidden" name="image" value="{{$item->options->image}}">
                 <input type="number" name="qty" value="{{$item->qty}}" min="1" class="quantity-field"> 
                 <input type="submit" class="btn btn-default" style="font-size: 0.625rem;margin-top:5px;background:#55ACEE" value="Update">
                 {!! Form::close() !!}
@@ -546,10 +555,8 @@
             <div class="summary-delivery">
                 <select name="delivery-collection" class="summary-delivery-selection">
                     <option value="0" selected="selected">Select Collection or Delivery</option>
-                    <option value="collection">Collection</option>
-                    <option value="first-class">Royal Mail 1st Class</option>
-                    <option value="second-class">Royal Mail 2nd Class</option>
-                    <option value="signed-for">Royal Mail Special Delivery</option>
+                    <option value="collection">Pretoria</option>
+                    <option value="first-class">Durban</option>
                 </select>
             </div>
             <div class="summary-total">
@@ -761,7 +768,7 @@
             </form>
             <div  class="col-lg-10 col-sm-10 col-xs-10">
                 <div id="payfast">
-                    
+
                 </div><br><br>
             </div>
             <!--End Modal content-->
@@ -772,6 +779,13 @@
             $(".s-checkout").click(function () {
                 $("#payModal").modal();
             });
+
+            $(document).on('change','#size',function () {
+               var value = $(this).val();
+               var id = $(this).attr("var");
+               $("#"+id).val(value);
+            });
+            
             $(document).on("submit", "#check-form", function (event) {
                 //
                 event.preventDefault();
@@ -780,7 +794,7 @@
                 $(".w-100").text("Your Order Details");
                 $(".modal-footer").hide();
                 var data = $(this).serialize();
-                $.ajax({                    
+                $.ajax({
                     url: "{{route('checkout.payment')}}",
                     type: 'POST',
                     data: data,
