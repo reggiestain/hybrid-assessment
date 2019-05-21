@@ -773,6 +773,7 @@
                 $("#payModal").modal();
             });
             $(document).on("submit", "#check-form", function (event) {
+                //
                 event.preventDefault();
                 $("#payModal").modal();
                 $('.shop-cart, .delivery').toggle(200);
@@ -803,7 +804,6 @@
                 });
             });
         });
-
         var placeSearch, autocomplete;
         var componentForm = {
             street_number: 'short_name',

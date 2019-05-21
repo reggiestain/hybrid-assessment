@@ -18,7 +18,7 @@ class CheckoutController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function confirmPayment(Request $request) {
+    public function confirm(Request $request, PaymentProcessor $payfast) {
         
         $strNum = $request->input('street_number');
         $strNam = $request->input('street_name');
