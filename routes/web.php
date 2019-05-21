@@ -11,7 +11,7 @@
   |
  */
 //Guest Routes...
-Route::group(['middleware' => ['isVerified']], function() {
+//Route::group(['middleware' => ['isVerified']], function() {
 Route::get('/', ['as' => 'home', 'uses' => 'Front\PagesController@home']);
 Route::get('/contact', ['as' => 'contact', 'uses' => 'Front\PagesController@contact']);
 Route::get('/option/{id}', ['as' => 'options', 'uses' => 'Front\PagesController@options']);
@@ -35,7 +35,7 @@ Route::post('/login', ['as' => 'login.post', 'uses' => 'Auth\LoginController@log
 Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
-});
+//});
 Route::get('email-verification/error', 'Auth\RegisterController@getVerificationError')->name('email-verification.error');
 Route::get('email-verification/check/{token}', 'Auth\RegisterController@getVerification')->name('email-verification.check');
 Route::get('resend-verification/token', 'Auth\RegisterController@resendToken')->name('resend-verification.token');
