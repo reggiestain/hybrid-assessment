@@ -780,7 +780,7 @@
                 $(".modal-footer").hide();
                 var data = $(this).serialize();
                 $.ajax({
-                    type: 'post',
+                    type: 'POST',
                     url: "{{route('checkout.payment')}}",
                     data: data,
                     beforeSend: function () {
