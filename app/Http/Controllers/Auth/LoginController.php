@@ -22,9 +22,7 @@ class LoginController extends Controller {
      * @return Response
      */
     public function __construct() {
-        if (!Auth::check()){
-            return redirect('/');
-        }
+       
     }
     
     public function login(Request $request) {
