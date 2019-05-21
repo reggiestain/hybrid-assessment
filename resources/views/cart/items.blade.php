@@ -615,7 +615,7 @@
                 <h4 class="modal-title w-100">Please enter delivery address</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <form id="check-form" role="form" action="{{route('checkout.payment')}}" mehod="POST">
+            <form mehod="POST"id="check-form" action="{{route('checkout.payment')}}">
                 {{ csrf_field() }}
                 <div class="modal-body">               
                     <div class="messages"></div>

@@ -26,7 +26,7 @@ Route::get('/cart/add/{id}/{size?}', ['as' => 'cart.add', 'uses' => 'Front\CartC
 Route::get('/policy', ['as' => 'policy', 'uses' => 'Front\PagesController@policy']);
 Route::get('/back', ['as' => 'back', 'uses' => 'Front\PagesController@back']);
 Route::get('/checkout', ['as' => 'checkout', 'uses' => 'Front\CartController@checkout']);
-Route::post('/checkout/confirmPayment', ['as' => 'checkout.payment', 'uses' => 'Front\CheckoutController@confirmPayment']);
+Route::post('/checkout/confirmPayment', 'Front\CheckoutController@confirmPayment');
 
 Route::get('/login', ['as' => 'login', 'uses' => 'Front\PagesController@login']);
 Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
