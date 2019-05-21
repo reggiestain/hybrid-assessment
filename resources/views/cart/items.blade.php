@@ -615,7 +615,7 @@
                 <h4 class="modal-title w-100">Please enter delivery address</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <form mehod="POST"id="check-form" action="/checkout/confirmPayment">
+            <form id="check-form" role="form">
                 {{ csrf_field() }}
                 <div class="modal-body">               
                     <div class="messages"></div>
@@ -772,7 +772,7 @@
             $(".s-checkout").click(function () {
                 $("#payModal").modal();
             });
-            $(document).on("submit", "#ceck-form", function (event) {
+            $(document).on("submit", "#check-form", function (event) {
                 event.preventDefault();
                 $("#payModal").modal();
                 $('.shop-cart, .delivery').toggle(200);
@@ -781,7 +781,7 @@
                 var data = $(this).serialize();
                 $.ajax({
                     type: 'POST',
-                    url: "{{url('/checkout/confirmPayment')}}",
+                    url: "{{route('checkout.payment')}}",
                     data: data,
                     beforeSend: function () {
                         //launchpreloader();
