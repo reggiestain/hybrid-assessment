@@ -30,7 +30,7 @@
             display: none;  
         }
         .product_image img{
-            width:290px;
+            width:330px;
             height:405.69px;
         }
     }

@@ -72,8 +72,7 @@
         <script src="{{ URL::asset('public/js/plugins/easing/easing.js') }}"></script>
         <script src="{{ URL::asset('public/js/custom.js') }}"></script>
 
- <script>
-     
+<script>    
 $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
