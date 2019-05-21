@@ -109,7 +109,7 @@ class CartController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        Cart::update($id, $request->qty,['options' => ['image' => $request->image, 'size' => $request->size]]);
+        Cart::update($id, ['qty'=>$request->qty,'options' => ['image' => $request->image, 'size' => $request->size]]);
 
         return back()->with('success', 'Item Info has been updated.');
     }
