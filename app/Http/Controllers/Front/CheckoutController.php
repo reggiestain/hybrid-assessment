@@ -72,7 +72,6 @@ class CheckoutController extends Controller {
         $payfast->setAmount(str_replace( ',', '', Cart::instance('default')->subtotal()));
         $payfast->setItem($items, $items);
         $payfast->setMerchantReference($request->input('surname').' '.$order->id);
-
         // Return the payment form.
         return $payfast->paymentForm('Confirm and Pay');
         }else{

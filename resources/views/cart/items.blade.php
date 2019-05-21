@@ -780,9 +780,9 @@
                 $(".w-100").text("Your Order Details");
                 $(".modal-footer").hide();
                 var data = $(this).serialize();
-                $.ajax({
-                    type: 'POST',
+                $.ajax({                    
                     url: "{{route('checkout.payment')}}",
+                    type: 'POST',
                     data: data,
                     beforeSend: function () {
                         //launchpreloader();

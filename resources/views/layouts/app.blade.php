@@ -7,6 +7,7 @@
         <meta name="description" content="David Damanga | Online Store">
         <meta name="keywords" content="African wax print fabric, Men African wear, Women African wear, African Clothings">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <link rel="stylesheet" type="text/css" href="{{ asset('public/css/styles/bootstrap4/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('public/css/styles/social.css') }}">
         <link href="{{ asset('public/css/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
@@ -71,7 +72,13 @@
         <script src="{{ URL::asset('public/js/plugins/easing/easing.js') }}"></script>
         <script src="{{ URL::asset('public/js/custom.js') }}"></script>
 
-        <script>
+ <script>
+     
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
 
 $(document).ready(function () {
     $(document).on("click", ".buy-now", function (e) {
