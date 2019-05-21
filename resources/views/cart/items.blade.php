@@ -615,7 +615,7 @@
                 <h4 class="modal-title w-100">Please enter delivery address</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <form mehod="POST"id="check-form" action="{{route('checkout.payment')}}">
+            <form mehod="POST"id="check-form" action="/checkout/confirmPayment">
                 {{ csrf_field() }}
                 <div class="modal-body">               
                     <div class="messages"></div>
@@ -781,7 +781,7 @@
                 var data = $(this).serialize();
                 $.ajax({
                     type: 'POST',
-                    url: "{{route('checkout.payment')}}",
+                    url: "{{url('/checkout/confirmPayment')}}",
                     data: data,
                     beforeSend: function () {
                         //launchpreloader();
