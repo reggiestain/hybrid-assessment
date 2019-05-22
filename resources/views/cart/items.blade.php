@@ -663,8 +663,8 @@
                                 </div>                     
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="form_email">Phone Number *</label>
-                                        <input id="form_email" type="text" name="mobile" class="form-control" placeholder="Enter your phone number" required="required" data-error="Valid phone number is required.">
+                                        <label for="form_email">Mobile Number *</label>
+                                        <input id="form_email" type="text" name="mobile" class="form-control" placeholder="Enter your mobile number" required="required" data-error="Valid phone number is required.">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
