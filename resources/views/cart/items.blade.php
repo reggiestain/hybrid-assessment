@@ -390,9 +390,8 @@
             margin-top: 1.25rem;
             position: relative;
         }
-        .l-q{
-           display: inline !important;
-        }
+        .l-q{display: inline !important;}
+        h4{font-size: 18px !important;}
         
     }
 
@@ -564,7 +563,7 @@
             </div>
             <div class="summary-delivery">
                 <select name="delivery-collection" class="summary-delivery-selection">
-                    <option value="0" selected="selected">Select Collection or Delivery</option>
+                    <option value="0" selected="selected">Select Collection or Delivery Province</option>
                     <option value="collection">Pretoria</option>
                     <option value="first-class">Durban</option>
                 </select>
@@ -629,7 +628,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header text-center">       
-                <h4 class="modal-title w-100">Please enter delivery address</h4>
+                <h4 class="modal-title w-100">Please Enter Collect or Delivery Information</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <form id="check-form" role="form">
