@@ -71,7 +71,7 @@ class CheckoutController extends Controller {
         $payfast->setBuyer($request->input('name'), $request->input('surname'), $request->input('email'));
         $payfast->setAmount(str_replace( ',', '', Cart::instance('default')->subtotal()));
         $payfast->setItem($items, $items);
-        $payfast->setMerchantReference($request->input('surname').' '.$order->id);
+        $payfast->setMerchantReference($order->id);
         // Return the payment form.
         return $payfast->paymentForm('Confirm and Pay');
         }else{
@@ -84,111 +84,31 @@ class CheckoutController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
-        
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store($id) {
-        
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id) {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id) {
-        $product = Product::find($id);
-        //Cart::add($id, $product->name, 1,$product->price, ['size'=>'Medium']);
-
-        return view('cart.index', compact('product'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function add($id) {
-        $product = Product::find($id);
-
-        $duplicates = Cart::search(function ($cartItem, $rowId) use ($id) {
-                return $cartItem->id === $id;
-            });
-
-        if ($duplicates->isNotEmpty()) {
-            return redirect()->route('options', $id)->with('success', 'Item is already in your cart.');
+    public function itn(Request $request, PaymentProcessor $payfast)
+    {
+        // Retrieve the Order from persistance. Eloquent Example. 
+        $order = Order::where('payment_id', $request->get('m_payment_id'))->firstOrFail(); // Eloquent Example 
+    
+        // Verify the payment status.
+        $status = $payfast->verify($request, $order->amount, $order->m_payment_id)->status();
+    
+        // Handle the result of the transaction.
+        switch( $status )
+        {
+            case 'COMPLETE': // Things went as planned, update your order status and notify the customer/admins.
+                echo "COMPLETE";
+                break;
+            case 'FAILED': // We've got problems, notify admin and contact Payfast Support.
+                 echo "FAILED";
+                break;
+            case 'PENDING': // We've got problems, notify admin and contact Payfast Support.
+                echo "PENDING";
+                break;
+            default: // We've got problems, notify admin to check logs.
+                echo "default";
+                break;
         }
-        Cart::add($id, $product->name, 1, $product->price, ['image' => $product->mime_type]);
+    }       
 
-        return redirect('/cart');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function SwitchTosaveForLater($id) {
-
-        $product = Cart::get($id);
-        Cart::remove($id);
-        Cart::instance('saveForLater')->add($id, $product->name, 1, $product->price, ['image' => $product->options->image])->associate('App\Models\Product');
-
-        return redirect('cart')->with('success', 'Item has been saved for later.');
-        ;
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id) {
-        Cart::update($id, $request->qty);
-        return back()->with('success', 'Item has been deleted.');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id) {
-        Cart::remove($id);
-        return back();
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function checkout() {
-        return view('cart.checkout');
-    }
 
 }
