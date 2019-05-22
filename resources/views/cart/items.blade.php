@@ -353,6 +353,7 @@
         .price{
          display: none;   
         }
+        
         .basket-module {
             margin-bottom: 1rem;
         }
@@ -389,6 +390,10 @@
             margin-top: 1.25rem;
             position: relative;
         }
+        .l-q{
+           display: inline !important;
+        }
+        
     }
 
     @media screen and (min-width: 641px) and (max-width: 960px) {
@@ -398,6 +403,7 @@
         .summary {
             width: 28%;
         }
+        
     }
 
     @media screen and (max-width: 960px) {
@@ -406,7 +412,7 @@
         }
         .product-details {
             padding: 0 1rem;
-        }
+        }        
     }
 
     @media only screen and (max-width: 1600px)
@@ -416,7 +422,7 @@
         } 
         #payfast{
             margin-left: 320px;
-        }
+        }        
     }
     @media only screen and (max-width: 600px) {
 
@@ -501,7 +507,7 @@
                     <img src="{{$item->options->image}}" alt="Placholder Image 2" class="product-frame">
                 </div>
                 <div class="product-details">
-                    <h1><strong><span class="item-quantity">4</span> {{$item->name}}</strong> </h1>
+                    <h1><strong><span class="item-quantity"></span> {{$item->name}}</strong> </h1>
                     <p><strong>Size</strong>
                         <select id="size" var="{{$item->id}}">
                             <option value="{{$item->options->size}}" selected>{{$item->options->size}}</option> 
@@ -518,6 +524,7 @@
                 {!! Form::open(['route'=>['cart.update',$item->rowId],'method'=>'PUT']) !!}
                 <input type="hidden" name="size" id="{{$item->id}}" value="{{$item->options->size}}">
                 <input type="hidden" name="image" value="{{$item->options->image}}">
+                <font class="l-q" style="display:none">QTY</font>
                 <input type="number" name="qty" value="{{$item->qty}}" min="1" class="quantity-field"> 
                 <input type="submit" class="btn btn-default" style="font-size: 0.625rem;margin-top:5px;background:#55ACEE" value="Update">
                 {!! Form::close() !!}
