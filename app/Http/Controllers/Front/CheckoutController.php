@@ -104,8 +104,9 @@ class CheckoutController extends Controller {
             case 'FAILED': // We've got problems, notify admin and contact Payfast Support.
                  echo "FAILED";
                 break;
-            case 'PENDING': // We've got problems, notify admin and contact Payfast Support.
-                echo "PENDING";
+            case 'Pending': // We've got problems, notify admin and contact Payfast Support.
+                $order->status = 'success';
+                $order->save();
                 break;
             default: // We've got problems, notify admin to check logs.
                 echo "default";
