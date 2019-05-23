@@ -113,7 +113,7 @@
                     <a href="{{ url('/login/twitter') }}" class="btn btn-block btn-social btn-twitter">
                         <span class="fa fa-twitter"></span> Sign up with Twitter
                     </a><br/>
-                    <a id="google-button" class="btn btn-block btn-social btn-google">
+                    <a id="google-button" class="btn btn-block btn-social btn-google" style="color:#fff">
                         <i class="fa fa-google"></i> Sign up with Google
                     </a>
             </div>

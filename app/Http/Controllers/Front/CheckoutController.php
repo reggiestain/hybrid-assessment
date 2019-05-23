@@ -86,6 +86,9 @@ class CheckoutController extends Controller {
      */
     public function itn(Request $request, PaymentProcessor $payfast)
     {
+        echo 'test';
+        exit();
+        /*
         // Retrieve the Order from persistance. Eloquent Example. 
         $order = Order::where('payment_id', $request->get('m_payment_id'))->firstOrFail(); // Eloquent Example 
     
@@ -108,6 +111,8 @@ class CheckoutController extends Controller {
                 echo "default";
                 break;
         }
+         * 
+         */
     }       
 
 

@@ -70,14 +70,14 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="submit" class="btn btn-black" value="Send message">
+                                    <input type="submit" class="btn btn-success" value="Send message">
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">
+                                <!--<div class="col-md-12">
                                     <br>
                                     <small class="text-muted"><strong>*</strong> These fields are required.</small>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
 
@@ -118,7 +118,7 @@
                             <a href="mailto:info@davidmadanga.com">info@davidmadanga.com</a>
                         </div>
                     </div><br>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3588.519477702246!2d28.137575714522253!3d-25.918162558698608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956f8c1654317d%3A0x4e7fd1e1c5b0d1a9!2sMolware!5e0!3m2!1sen!2sza!4v1556226741399!5m2!1sen!2sza" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>  </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3588.519477702246!2d28.137575714522253!3d-25.918162558698608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956f8c1654317d%3A0x4e7fd1e1c5b0d1a9!2sMolware!5e0!3m2!1sen!2sza!4v1556226741399!5m2!1sen!2sza" width="550" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>  </div>
             </div>
 
         </div>

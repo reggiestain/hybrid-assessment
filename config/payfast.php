@@ -23,7 +23,7 @@ return
 
     'hosts' => [
         'www.payfast.co.za',
-        'sandbox.payfast.co.za',
+        'sandbox.payfast.co.za/eng/process',
         'w1w.payfast.co.za',
         'w2w.payfast.co.za',
     ]
