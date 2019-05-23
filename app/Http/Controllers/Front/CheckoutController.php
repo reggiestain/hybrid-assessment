@@ -39,10 +39,9 @@ class CheckoutController extends Controller {
             } else {
                $address = "$strNum $strNam<br>$province<br>$postCode<br>$ctry"; 
             }
-            
-           
+                       
             $userId = Auth::user()->id;
-            $address =Address::create([
+            $address = Address::create([
                 'user_id' => $userId,
                 'street_number' => $strNum,
                 'street_name' => $strNam,
@@ -67,6 +66,8 @@ class CheckoutController extends Controller {
         
         if($order->id){
         
+         $order->payment_id = $order->id;
+         $order->save();
         // Build up payment Paramaters.
         $payfast->setBuyer($request->input('name'), $request->input('surname'), $request->input('email'));
         $payfast->setAmount(str_replace( ',', '', Cart::instance('default')->subtotal()));
@@ -86,8 +87,8 @@ class CheckoutController extends Controller {
      */
     public function itn(Request $request, PaymentProcessor $payfast)
     {
-        // Retrieve the Order from persistance. Eloquent Example. 
-        $order = Order::where('payment_id', $request->get('m_payment_id'))->firstOrFail(); // Eloquent Example 
+         
+        $order = Order::where('payment_id', $request->get('m_payment_id'))->firstOrFail(); // Eloquent Example
     
         // Verify the payment status.
         $status = $payfast->verify($request, $order->amount, $order->m_payment_id)->status();
@@ -96,7 +97,8 @@ class CheckoutController extends Controller {
         switch( $status )
         {
             case 'COMPLETE': // Things went as planned, update your order status and notify the customer/admins.
-                echo "COMPLETE";
+                $order->status = 'success';
+                $order->save();
                 break;
             case 'FAILED': // We've got problems, notify admin and contact Payfast Support.
                  echo "FAILED";
