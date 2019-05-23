@@ -36,7 +36,6 @@ class PagesController extends Controller {
      * @return mixed
      */
     public function contact() {
-        
         return view('pages.contact');
     }
     /**
