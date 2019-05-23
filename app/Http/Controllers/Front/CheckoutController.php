@@ -30,9 +30,10 @@ class CheckoutController extends Controller {
         if (!Auth::check()) {
             if (empty($strNam)) {
                 $address = $request->input('address');                
-            }
+            }else{
             $address = "$strNum $strNam<br>$province<br>$postCode<br>$ctry";
             $userId = 0;
+            }
         } else {
             if (empty($strNam)) {
                 $address = $request->input('address');                
