@@ -16,7 +16,7 @@ return
     'merchant' => [
         'merchant_id' => env('PF_MERCHANT_ID'), // TEST Credentials. Replace with your merchant ID from Payfast.
         'merchant_key' => env('PF_MERCHANT_KEY'), // TEST Credentials. Replace with your merchant key from Payfast.
-        'return_url' => env('PF_RETURN_URL','https://www.davidmadanga.com/contact'), // Redirect URL on Success.
+        'return_url' => env('PF_RETURN_URL'), // Redirect URL on Success.
         'cancel_url' => env('PF_CANCEL_URL'), // Redirect URL on Cancellation.
         'notify_url' => env('PF_ITN_URL'), // ITN URL.
     ],
