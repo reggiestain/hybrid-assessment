@@ -612,7 +612,7 @@
                     {!! Form::close() !!}
                     {!! Form::open(['route'=>['saveForLater.switchToCart',$item->rowId],'method'=>'POST']) !!}
                     {{ csrf_field() }}
-                    <button type="submit" class="btn btn-danger btn-sm" role="button">Move to cart</button>
+                    <button type="submit" class="btn btn-success btn-sm" role="button">Move to cart</button>
                     {!! Form::close() !!}
                 </div>
 

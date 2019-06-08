@@ -92,7 +92,6 @@ class CartController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function SwitchTosaveForLater($id) {
-
         $product = Cart::get($id);
         Cart::remove($id);
         Cart::instance('saveForLater')->add($id, $product->name, 1, $product->price, ['image' => $product->options->image])->associate('App\Models\Product');
